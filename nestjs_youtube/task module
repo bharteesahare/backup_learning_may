@@ -1,0 +1,265 @@
+## NestJS Sample Project (No Database, With Relations)
+
+### 📌 In-Memory Task Management System
+
+---
+
+## 🧠 Project Overview
+
+Build a **Task Management API** with **Users, Projects, and Tasks** modules.
+All data is stored **in memory**, but relationships are modeled exactly like a real database-backed app.
+
+---
+
+## 🧱 Modules Overview (3 Modules)
+
+### 1️⃣ Users Module
+
+Manages application users.
+
+### 2️⃣ Projects Module
+
+Each project belongs to **one user**.
+
+### 3️⃣ Tasks Module
+
+Each task belongs to **one project** and **one user**.
+
+---
+
+## 🔗 Relationships (In-Memory)
+
+```
+User (1) ──── (Many) Project
+Project (1) ──── (Many) Task
+User (1) ──── (Many) Task
+```
+
+Relationships are maintained using **IDs** (just like foreign keys).
+
+---
+
+## 🏗️ Project Structure
+
+```
+src/
+ ├── users/
+ │    ├── users.module.ts
+ │    ├── users.controller.ts
+ │    ├── users.service.ts
+ │    └── user.model.ts
+ │
+ ├── projects/
+ │    ├── projects.module.ts
+ │    ├── projects.controller.ts
+ │    ├── projects.service.ts
+ │    └── project.model.ts
+ │
+ ├── tasks/
+ │    ├── tasks.module.ts
+ │    ├── tasks.controller.ts
+ │    ├── tasks.service.ts
+ │    ├── dto/
+ │    └── task.model.ts
+ │
+ └── app.module.ts
+```
+
+---
+
+## 👤 User Model
+
+```ts
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+```
+
+---
+
+## 📁 Project Model
+
+```ts
+export interface Project {
+  id: string;
+  name: string;
+  ownerId: string; // User ID
+}
+```
+
+---
+
+## ✅ Task Model
+
+```ts
+export enum TaskStatus {
+  OPEN = 'OPEN',
+  IN_PROGRESS = 'IN_PROGRESS',
+  DONE = 'DONE',
+}
+
+export interface Task {
+  id: string;
+  title: string;
+  status: TaskStatus;
+  userId: string;    // Assigned user
+  projectId: string; // Parent project
+}
+```
+
+---
+
+## 🔌 Dependency Injection Flow
+
+* `TasksService` injects `UsersService` and `ProjectsService`
+* Validates relations before creating tasks
+* Modules export services for cross-module usage
+
+---
+
+## 📦 Services Responsibility
+
+### UsersService
+
+* Create user
+* Get user by ID
+
+---
+
+### ProjectsService
+
+* Create project
+* Ensure project belongs to user
+
+---
+
+### TasksService
+
+* Create task
+* Validate:
+
+  * User exists
+  * Project exists
+  * Project belongs to user
+* Update task status
+* Delete task
+
+---
+
+## 🌐 API Endpoints
+
+### 👤 Users
+
+```http
+POST /users
+GET  /users
+```
+
+---
+
+### 📁 Projects
+
+```http
+POST /projects
+GET  /projects/user/:userId
+```
+
+---
+
+### ✅ Tasks
+
+```http
+POST   /tasks
+GET    /tasks/project/:projectId
+PATCH  /tasks/:id
+DELETE /tasks/:id
+```
+
+---
+
+## 🧾 DTO Example (Create Task)
+
+```ts
+export class CreateTaskDto {
+  @IsString()
+  @IsNotEmpty()
+  title: string;
+
+  @IsEnum(TaskStatus)
+  status: TaskStatus;
+
+  @IsString()
+  userId: string;
+
+  @IsString()
+  projectId: string;
+}
+```
+
+---
+
+## ⚠️ Relation Validation (No DB!)
+
+Example logic in `TasksService`:
+
+* Check user exists
+* Check project exists
+* Ensure project.ownerId === userId
+
+Throw:
+
+* `NotFoundException`
+* `BadRequestException`
+
+---
+
+## 🧪 Testing Flow (Postman)
+
+1. Create User
+2. Create Project for User
+3. Create Task for Project
+4. Fetch tasks by project
+5. Update task status
+6. Delete task
+
+---
+
+## 🧠 Key NestJS Concepts Covered
+
+✅ Modules & exports
+✅ Dependency Injection across modules
+✅ In-memory relational data
+✅ DTOs & Validation Pipes
+✅ REST APIs
+✅ Error handling
+✅ PATCH vs PUT
+
+---
+
+## 🎯 Practice Extensions
+
+1. Prevent deleting projects with active tasks
+2. Assign multiple users to one project
+3. Add task filtering by status
+4. Add request logging interceptor
+5. Simulate soft delete
+
+---
+
+## 🏁 Why This Project Is Powerful
+
+* Feels like a **real backend**
+* No database complexity
+* Perfect for learning **NestJS architecture**
+* Easy to migrate to DB later
+
+---
+
+### 🚀 Ideal For
+
+* NestJS beginners
+* Classroom training
+* Portfolio projects
+* Interview demonstrations

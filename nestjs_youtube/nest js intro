@@ -1,0 +1,94 @@
+nest js is framework for builiding efficient scallable and maitainable node js server side application.
+
+nest js 
+provide applicattion architecture and configraytion and the layer of abstract above common node js web framework to create the application. the architectuire is heavily inspired by angular.
+
+
+Prerequistes:
+javascript
+typescript
+rxjs(optional)
+node js
+
+client server architectuire
+rest api
+mvc
+
+web framework 
+express(default)
+fastify(optional)
+
+
+platform independent 
+create the adaptor need to create
+
+
+nest js
+controller 
+provides 
+modules
+pipes
+middleware
+interceptors
+exception filter
+configuration
+
+
+database
+MongoDB
+type orm
+
+auth
+cookies & session
+passport js integration
+RBAC
+cba
+
+Catching
+Application level Catching
+endpoint Catching
+redis store integration
+
+files
+file streaming
+file upload
+file upload s3
+
+Usefull packages
+http modules axios
+cors
+compress
+helmet
+csrf & rate limiter
+
+Logging and documention
+application logger
+morgan
+winston
+url versioning
+header versioning
+media type versioning
+open api swagger
+
+Task sceduling
+crons
+events
+queue
+
+mvc
+template engines integration
+handlebars , pug, ejs
+
+sse sever send events
+web sockest
+cors 
+
+mircoservices
+nest js mircoservices app
+redis transport integration
+kafka transport integration
+
+hybrid apps
+Nest js
+
+websockets, mircoservices

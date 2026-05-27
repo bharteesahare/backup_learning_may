@@ -1,0 +1,124 @@
+nest g res user
+
+entity -> is a class that map to a database table.
+
+Type orm:
+Connect the database:
+
+
+npm install @nestjs/typeorm typeorm
+npm install pg
+npm i @nestjs/config
+
+ConfigModule.forRoot(),
+
+
+create
+.env file
+
+DB_HOST: 
+DB_PORT
+
+
+Install Postres command:
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+systemctl status postgresql
+sudo -u postgres psql
+
+
+Set password for postgres user
+sudo -u postgres psql
+\dt
+# create the db
+CREATE DATABASE "my-app-typeorm-db";
+
+# Then connect to it:
+\c "my-app-typeorm-db"
+
+# If you want to double-check it was created:
+\l
+
+ALTER USER postgres PASSWORD 'postgres';
+
+nest g resource user
+
+
+
+sudo -u postgres psql
+could not change directory to "/home/bharti": Permission denied
+psql (14.20 (Ubuntu 14.20-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# \c "my-app-typeorm-db"
+You are now connected to database "my-app-typeorm-db" as user "postgres".
+my-app-typeorm-db=# \dt
+        List of relations
+ Schema | Name | Type  |  Owner   
+--------+------+-------+----------
+ public | user | table | postgres
+(1 row)
+
+
+\d user
+                                   Table "public.user"
+  Column   |       Type        | Collation | Nullable |             Default              
+-----------+-------------------+-----------+----------+----------------------------------
+ id        | integer           |           | not null | nextval('user_id_seq'::regclass)
+ firstName | character varying |           | not null | 
+ lastName  | character varying |           | not null | 
+ email     | character varying |           | not null | 
+Indexes:
+    "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY, btree (id)
+    "UQ_e12875dfb3b1d92d7d7c5377e22" UNIQUE CONSTRAINT, btree (email)
+
+
+working on the user dto in this.
+
+npm install class-validator
+create-dto add the validation is not emeplty string
+
+
+now process the create pART
+
+
+create the nest app 
+
+nest new my-app-typeorm
+cd my-app-typeorm
+npm install @nestjs/typeorm typeorm
+npm install pg
+npm i @nestjs/config
+
+.env create the new file ->
+DB_HOST= localhost
+DB_PORT = 5432
+DB_USERNAME = postgres
+DB_PASSWORD = postgres
+DB_DATABASE= my-app-typeorm-db
+
+//connection 
+app.module.ts
+imports: [
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (ConfigService: ConfigService) => ({
+        type: 'postgres',
+        host: ConfigService.get('DB_HOST'),
+        port: ConfigService.get('DB_PORT'),
+        username: ConfigService.get('DB_USERNAME'),
+        password: ConfigService.get('DB_PASSWORD'),
+        database: ConfigService.get('DB_DATABASE'),
+        autoLoadEntities: true,
+        synchronize: true // use synchronize false for production
+      }),
+      inject: [ConfigService],
+    }),
+    UserModule
+  ]
+
+
+  nest g resource user
+
+setting all the service and controller and the dto

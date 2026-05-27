@@ -1,0 +1,165 @@
+Here are **clear, organized, easy-to-teach notes** on the **Shared Responsibility Model**, using all the points you provided and formatted for students preparing for **AZ-900**.
+
+---
+
+# **🔐 Shared Responsibility Model – Notes**
+
+## **What is the Shared Responsibility Model?**
+
+* Cloud security and operations are **shared** between:
+
+  * **Microsoft (Cloud Provider)**
+  * **Customer (You)**
+* The responsibilities shift depending on:
+
+  * **On-Premises**
+  * **IaaS (Virtual Machines)**
+  * **PaaS (App Service)**
+  * **SaaS (Software like Office 365)**
+
+### Simple analogy:
+
+**In an office building:**
+
+* You lock the doors
+* You turn off the lights
+* You manage your items and activities
+  The building owner handles construction, electricity, and safety systems.
+
+---
+
+# **🏢 On-Premises (Everything is your responsibility)**
+
+> You host your servers on your own premises.
+
+### **Customer responsibility only (100% You):**
+
+1. Building security
+2. Physical network security
+3. Physical computer/server security
+4. Operating system patches
+5. Network and firewall settings
+6. Application settings
+7. Authentication platform (Active Directory)
+8. User accounts
+9. Devices (laptops, PCs, phones)
+10. Data
+
+**On-premises = You manage EVERYTHING.**
+
+---
+
+# **🖥️ Cloud Virtual Machine (IaaS) – Mixed Responsibility**
+
+> You rent virtual machines. Azure handles hardware; you handle software.
+
+### **Azure responsibility:**
+
+1. Building security
+2. Physical network security
+3. Physical computer security
+
+### **Customer responsibility:**
+
+4. Operating system patches
+5. Network/firewall settings
+6. Application settings
+7. Authentication platform
+8. User accounts
+9. Devices
+10. Data
+
+**You control the OS and above.
+Azure controls the physical layer and virtualization.**
+
+---
+
+# **🌐 Cloud App Service (PaaS) – More shared**
+
+> Azure manages the platform. You manage the app logic and settings.
+
+### **Azure responsibility:**
+
+1. Building security
+2. Physical network security
+3. Physical computer security
+4. Operating system patches
+
+### **Shared / depends on configuration:**
+
+5. Network & firewall settings
+6. Application settings
+7. Authentication platform
+
+### **Customer responsibility:**
+
+8. User accounts
+9. Devices
+10. Data
+
+**You focus on your code; Azure handles servers, OS, runtime.**
+
+---
+
+# **📦 Cloud SaaS (Software as a Service) – Mostly Azure’s responsibility**
+
+> You use a fully managed application like Office 365.
+
+### **Azure responsibility:**
+
+1. Building security
+2. Physical network security
+3. Physical computer security
+4. Operating system patches
+5. Network & firewall settings
+6. Application settings
+
+### **Shared:**
+
+7. Authentication platform (Azure does most, customer configures users/MFA)
+
+### **Customer responsibility:**
+
+8. User accounts
+9. Devices
+10. Data
+
+**Example: Office 365**
+
+* You don’t control the servers or application software.
+* You only manage users, devices, and data.
+
+---
+
+# **📊 Quick Summary Table**
+
+| Responsibility         | On-Prem | IaaS (VM) | PaaS (App Service) | SaaS (Office 365) |
+| ---------------------- | ------- | --------- | ------------------ | ----------------- |
+| Physical security      | You     | Azure     | Azure              | Azure             |
+| Network infrastructure | You     | Azure     | Azure              | Azure             |
+| Hardware / servers     | You     | Azure     | Azure              | Azure             |
+| OS patches             | You     | You       | Azure              | Azure             |
+| Network config         | You     | You       | Shared             | Azure             |
+| App settings           | You     | You       | Shared             | Azure             |
+| Identity/auth platform | You     | You       | Shared             | Shared            |
+| User accounts          | You     | You       | You                | You               |
+| Devices                | You     | You       | You                | You               |
+| Data                   | You     | You       | You                | You               |
+
+---
+
+# **⭐ Key Takeaways for Students**
+
+* As you move from **On-Prem ➜ IaaS ➜ PaaS ➜ SaaS**, your responsibility **decreases**.
+* SaaS gives you the least control but also the **lowest maintenance**.
+* Azure always handles:
+
+  * Buildings
+  * Physical network
+  * Physical servers
+* You always handle:
+
+  * Data
+  * Users
+  * Devices
+https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility-ai

@@ -1,0 +1,31 @@
+✅ Why people and not person?
+Rails uses plural table names by default. It converts the model name Person (singular) to its plural form people using ActiveSupport::Inflector.
+
+rails g model Person
+Rails will:
+
+Generate a model file:
+app/models/person.rb
+
+Generate a migration file (in db/migrate/) like:
+XXXX_create_people.rb
+(where XXXX is a timestamp)
+
+Create a database table named people, not person.
+
+15. How can you create an index on a column in a migration?
+add_index :users, :email
+
+16. What is a foreign key and how do you add one in Rails?
+Answer:
+A foreign key connects two tables.
+rails g migration AddUserRefToPosts user:references
+
+19. What is the use of rails db:seed?
+Answer:
+It loads data into the database using db/seeds.rb.
+
+
+
+ Processing by ManifestsController#dispatch_update as HTML
+199781-[2025-07-10 10:33:16.576321 INFO 4052986]- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"YhZB2fCOwUS/5ShF6Wkun09xTDIZ6E2vUwGhhQgn2OwfWWmv5BttZPJVR3mkyQgRfhVBNPjGcI3aLF8P/EsjGA==", "event"=>{"event_master_record_id"=>"23", "operational_reason_code_id"=>"", "location_type"=>"city", "event_location_facility_id"=>"", "event_location"=>"Gurgaon, Haryana", "seal_number"=>"123456", "occurred_at"=>"10-Jul-2025 10:33 AM", "reported_by"=>"", "dispatch_delay_reason_id"=>"590", "description"=>""}, "return_url"=>"https://logifreight.mllqa.com/manifests/4087437", "reason_code"=>"", "id"=>"4087437"}

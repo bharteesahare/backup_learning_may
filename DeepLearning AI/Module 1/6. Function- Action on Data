@@ -1,0 +1,176 @@
+Here are **clean, simple study notes** for everything in your example.
+These are perfect for learning Python + LLM functions.
+
+---
+
+# 📘 **NOTES: Python Functions + LLM Functions**
+
+---
+
+# 🔹 **1. Importing Helper Functions**
+
+```python
+from helper_functions import *
+```
+
+This imports:
+
+* `print_llm_response()` → sends a prompt to the LLM and prints the result
+* `get_llm_response()` → sends a prompt and **returns** the result (you print it yourself)
+
+---
+
+# 🔹 **2. Basic Python Print**
+
+```python
+print("¯\_(ツ)_/¯")
+```
+
+Prints text directly to the screen.
+
+---
+
+# 🔹 **3. Using LLM in Python**
+
+```python
+print_llm_response("What is the capital of France?")
+```
+
+* Sends the string to the LLM
+* LLM prints the response
+* Works like asking ChatGPT inside your code
+
+---
+
+# 🔹 **4. Checking the Type of a Value**
+
+```python
+type(17)
+```
+
+Returns the type: `<class 'int'>`
+
+---
+
+# 🔹 **5. Useful Built-in Python Functions**
+
+### ✔ Get length of a string
+
+```python
+len("Hello world")   # → 11
+```
+
+### ✔ Round a number
+
+```python
+round(42.17)   # → 42
+```
+
+### ✔ Save output to a variable
+
+```python
+string_length = len("hello world")
+print(string_length)
+```
+
+---
+
+# 🔹 **6. Using Functions inside an LLM Prompt**
+
+```python
+name = "Bhartee"
+potatoes = 4.75
+
+prompt = f"""Write a couplet about my friend {name} 
+who has about {round(potatoes)} potatoes"""
+
+response = get_llm_response(prompt)
+print(response)
+```
+
+Key ideas:
+
+* Use **f-strings** to insert variables
+* Use **round()** to format numeric values
+* `get_llm_response()` returns the text → you print it yourself
+
+---
+
+# 🔹 **7. Simple Math Exercise**
+
+```python
+fav_num = 5
+lucky_number = fav_num * 10
+print(f"Your lucky number is {lucky_number}!")
+```
+
+---
+
+# 🔹 **8. Using print_llm_response() to generate a poem**
+
+```python
+poem = "Jony Jony yes papa"
+
+prompt = f"""write the {poem} of this"""
+response = print_llm_response(prompt)
+```
+
+Note:
+
+* `print_llm_response()` prints automatically
+* No need to print `response`
+
+---
+
+# 🔹 **9. Using get_llm_response() instead**
+
+The exercise asks you to:
+
+1. Create a variable: `number_of_lines`
+2. Create a prompt using that number
+3. Use:
+
+```python
+response = get_llm_response(prompt)
+print(response)
+```
+
+Example solution:
+
+```python
+number_of_lines = 4
+
+prompt = f"Write a poem with {number_of_lines} lines about sunshine."
+response = get_llm_response(prompt)
+
+print(response)
+```
+
+---
+
+# 🟦 **KEY TAKEAWAYS**
+
+### ✔ `print()`
+
+Displays text directly.
+
+### ✔ `len()`
+
+Counts characters in a string.
+
+### ✔ `round()`
+
+Rounds numbers.
+
+### ✔ `f"... {variable} ..."`
+
+Inserts variables inside strings.
+
+### ✔ `print_llm_response()`
+
+Sends a prompt to the AI and prints the result.
+
+### ✔ `get_llm_response()`
+
+Sends a prompt to the AI and **returns the result** so you can print or modify it.
+

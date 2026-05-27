@@ -1,0 +1,160 @@
+used car pricing api.:
+users  sign up with email and pass
+user get an estimate for how much their car is worth based on the market/model/year/mileage
+user cas report what they sold their values for 
+admin have to prove reported sales
+
+adminstrations
+
+High level architecture:
+nest new my_car_value:
+
+method and routes:
+Sign in/Sign UP:
+post /auth/signup -> body {email, password} -> create a new user and sign in
+get /auth/signin -> body {email, password} -> sign in as an existing user
+
+Reports:
+get /reports -> QS -> make, model, year, mileage, longitude, latitude -> get an estimate for the cars value
+post /reports => Body {make, model, year, mileage, longitude, latitude} -> reports how much a vehicle sold
+patch /reports/:id -> Body -> {approved} -> approve or reject a report submitted by user
+
+Module design:
+Controller      | Services      | Repository
+UsersController  UsersService     UsersRepository => Users Module
+ReportsController ReportsService   ReportsRepository => Reports Module
+
+
+=======================================================================Generating Module, controller, service
+BUt not generate repoistory
+
+nest g module users
+nest g module reports
+nest g controller users
+nest g controller reports
+nest g service users
+nest g service reports
+
+
+======================
+Persistent with data
+Nest works fine with any orm but works well out of the box with typeorm and mongoose
+
+TypeORM: match made heaven
+sqlite
+postgres
+mysql
+mongodb
+
+mongoose:
+mongodb
+
+For right now for ease of setup -> type orm -> sqlite
+
+===================Install type orm===============
+npm install @nestjs/typeorm typeorm sqlite3
+
+Architecture:
+
+connection to sqlite db -> APP module
+1. UsersModule -> 
+    User Entity -> list the diff properties that a user ha(no functionality)
+    Users Repository -> method to find update, delete, create user
+
+2. ReportsModule
+    Report Entity -> List of diff properties that a reports has (no functionality)
+    Reports repository -> methods to find update, delete, create reports
+
+==============
+setting up db :
+for right now for ease of setup -> typeorm -> sqlite
+eventually -> type orm -> postgres
+
+npm install @nestjs/typeorm typeorm sqlite3
+
+
+===============
+creating an entity:
+create an entity file, create a class in it that lists all the properties that your entity will have.
+connect the entity to it's parent module, this creates a repository.
+connect the entity to the root connect (in app module)
+
+=======
+download the extension sqlite to check the db related data
+view -> pallets > open database
+in the sidebar you can see the sqlite_explore
+
+==============migration:=========
+if we want to change in the column we used the migration, change the structure of the database.
+
+syncronise -> development of the feature
+
+@Entity()
+Class User
+@PrimaryGeneratedColumn()
+id: number
+
+@Column()
+email: string
+
+@Column()
+password: string
+
+@Column()
+username: string
+
+
+Repository Notes:
+typeorm.io 
+create() -> makes a new instance of an entity but does not persist it to the db.
+save() -> adds or update a record to the db.
+find() -> run a query and return the list of entities.
+findOne() -> Run a query and returning the 1st record matching the search criteria.
+remove() -> remove a record from the db.
+
+save() -> insert() , update()
+remove() -> delete()
+
+
+======Extra Routes=====
+method and routes    Body Or query string    Description          Controller  Service
+post /auth/signup   body - {email, password}  create a new user    createUser     create
+get /auth/:id                                 get user using id    findUser    findOne
+get /auth?email=                              get user using email  findAllUser find
+patch /auth//:id    body -> {email, password}  update the existing user updateUser  update
+delete /auth/:id                              delete user using id   removeUser    remove    
+
+
+npm install class-validator class-transformer
+
+
+Install “REST Client” by Huachao Mao from the VS Code extensions marketplace.
+
+2. Create a .http or .rest file
+
+# creating and saving user
+
+create() -> make a new instance of an entity but does not persist it to the db
+save() -> add or update a record to the db
+find() -> runs a query and return a list of entities
+findOne() -> run a query returning the 1st record matching the search criteria
+remove() -? remove the record from the db
+
+
+Request:
+{email: "bhartee@gmail.com", password: "Bhartee@123"}
+|
+|
+ValidationPipe < --- CreateUserDto
+|
+|
+UsersController(defines routes + picks interesting data from incoming request) 
+|
+|
+UserService(contains our real app logic) < --   User Entity
+|
+|
+UsersRepository(Created by TypeORM Interface to the db) < -- User Entity
+|
+|
+SQLITE DB

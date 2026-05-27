@@ -1,0 +1,205 @@
+# **Getting Started with Ruby: Basic Syntax and Data Types**
+
+Ruby is a beginner-friendly and powerful programming language known for its simplicity and readability. If you're just starting, understanding basic syntax and data types is the first step. Let’s dive into the essentials of Ruby!
+
+---
+
+## **1. Variables: Storing Data**
+In Ruby, you don’t need to specify the data type when declaring a variable—it’s dynamically assigned.
+
+```ruby
+name = "Alice"   # String
+age = 25         # Integer
+height = 5.8     # Float
+is_student = true # Boolean
+```
+
+**Key Points:**
+- Variables don’t require explicit type declarations.
+- Ruby uses `snake_case` for variable names.
+- Booleans (`true`, `false`) represent logical values.
+
+---
+
+## **2. Strings: Working with Text**
+Strings are used to store textual data and can be enclosed in either double (`"`) or single (`'`) quotes.
+
+```ruby
+str1 = "Hello"
+str2 = 'World'
+
+puts str1 + " " + str2  # Concatenation → "Hello World"
+puts "#{str1} #{str2}"  # Interpolation → "Hello World"
+puts str1.upcase        # "HELLO"
+puts str2.downcase      # "world"
+```
+
+**Key Points:**
+- `+` joins two strings.
+- `#{}` is used for string interpolation inside double quotes.
+- `.upcase` and `.downcase` change letter cases.
+
+---
+
+## **3. Numbers: Integers & Floats**
+```ruby
+x = 10     # Integer
+y = 3.5    # Float
+
+puts x + y # 13.5
+puts x - y # 6.5
+puts x * y # 35.0
+puts x / y # 2.857142857142857
+puts x % 3 # 1 (Modulus)
+puts x**2  # 100 (Exponentiation)
+```
+
+**Key Points:**
+- Arithmetic operations work as expected.
+- `%` gives the remainder (modulus operation).
+- `**` is used for exponentiation.
+
+---
+
+## **4. Arrays: Storing Multiple Values**
+Arrays hold ordered lists of values and can store different types of data.
+
+```ruby
+arr = [1, 2, 3, "Ruby", true]
+
+puts arr[0]  # 1 (First element)
+puts arr[-1] # true (Last element)
+
+arr << 4      # Append 4 → [1, 2, 3, "Ruby", true, 4]
+arr.push(5)   # Another way to add → [1, 2, 3, "Ruby", true, 4, 5]
+arr.pop       # Removes last element → [1, 2, 3, "Ruby", true, 4]
+```
+
+**Key Points:**
+- Arrays use zero-based indexing (`arr[0]` is the first element).
+- `<<` or `.push` adds elements, `.pop` removes the last element.
+
+---
+
+## **5. Hashes: Key-Value Storage**
+Hashes store data in key-value pairs, similar to dictionaries in Python.
+
+```ruby
+person = { name: "Alice", age: 25, city: "New York" }
+
+puts person[:name]  # Alice
+puts person[:age]   # 25
+
+person[:gender] = "Female"  # Add a new key-value pair
+puts person                 # {:name=>"Alice", :age=>25, :city=>"New York", :gender=>"Female"}
+```
+
+**Key Points:**
+- Hash keys are usually symbols (`:key`), which are more efficient than strings.
+- Access values using `hash[:key]`.
+
+---
+
+## **6. Conditionals: Making Decisions**
+Conditional statements control program flow based on conditions.
+
+```ruby
+age = 18
+
+if age >= 18
+  puts "Adult"
+elsif age > 12
+  puts "Teenager"
+else
+  puts "Child"
+end
+```
+
+**Key Points:**
+- `if`, `elsif`, and `else` are used for decision-making.
+- Ruby uses indentation for readability, but it's not required.
+
+---
+
+## **7. Loops: Repeating Actions**
+### **While Loop**
+```ruby
+i = 1
+while i <= 5
+  puts i
+  i += 1
+end
+```
+
+### **For Loop**
+```ruby
+for num in [1, 2, 3, 4, 5]
+  puts num
+end
+```
+
+### **Each Loop (For Arrays & Hashes)**
+```ruby
+[10, 20, 30].each { |n| puts n }
+
+person.each { |key, value| puts "#{key}: #{value}" }
+```
+
+**Key Points:**
+- `while` runs until a condition is false.
+- `for` loops iterate over a collection.
+- `.each` is the preferred way to loop through arrays & hashes.
+
+---
+
+## **8. Methods: Reusable Code Blocks**
+Methods allow you to write reusable code.
+
+```ruby
+def greet(name)
+  return "Hello, #{name}!"
+end
+
+puts greet("Alice")  # "Hello, Alice!"
+```
+
+**Key Points:**
+- Methods are defined using `def method_name`.
+- `return` is optional (Ruby returns the last evaluated expression).
+
+---
+
+## **9. Symbols: Lightweight Identifiers**
+Symbols (`:symbol`) are immutable and more efficient than strings for keys.
+
+```ruby
+sym = :ruby
+puts sym.object_id  # Symbols have a unique ID
+puts :ruby.object_id == :ruby.object_id  # true
+```
+
+**Key Points:**
+- Symbols are commonly used as hash keys.
+- Unlike strings, the same symbol always has the same object ID.
+
+---
+
+## **10. Ranges: Sequences of Numbers**
+Ranges represent sequences of numbers and can be converted into arrays.
+
+```ruby
+puts (1..5).to_a  # [1, 2, 3, 4, 5]
+puts (1...5).to_a # [1, 2, 3, 4] (Excludes 5)
+```
+
+**Key Points:**
+- `1..5` includes 5, while `1...5` excludes it.
+- Ranges are useful in loops and conditions.
+
+---
+
+## **Final Thoughts**
+Ruby’s syntax is clean and easy to read, making it a great language for beginners. Understanding variables, data types, loops, and conditionals sets a strong foundation for writing efficient Ruby programs.
+
+Happy coding! 🚀
+

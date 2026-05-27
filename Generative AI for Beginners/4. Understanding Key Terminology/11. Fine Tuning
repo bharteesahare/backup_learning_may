@@ -1,0 +1,38 @@
+Fine Tuning:
+
+Huge value of dataset
+
+Fine Tuning a llm is the process of adapting a pre trained model to perform a specific tasks or to cater to a particular domain more effectively.
+Foundation model.
+
+For a specific task for your organization
+adjusting pre trained 
+
+medical data set -> it return the better dataset.
+
+self supervised.
+Domain specific trainibg data -> llms -> predic the answer i eat ice cream.
+
+Healthcare datatructure -> drugs 
+
+Supervised:
+give detailed labeled traning data
+input /outputttt labeed training data -> llm > output
+
+Reinforcement ->
+based on the score like 0 score and 10 score based on the output rating it trained the model and answer the specific task.
+i eat ice cream -> 10
+
+Healthcare:
+Drug -> private information
+How we enable to answer the dataset.
+
+Fine Tuning is not about:
+create intelligence from scratch.
+eliminating data requirnment.
+morre data more accurate data.
+a single universal solution.
+magical one time process.
+
+LLM:
+Embedding:

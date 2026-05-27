@@ -1,0 +1,46 @@
+Here’s a simple explanation of **IP**, **TCP**, and **UDP**:
+
+---
+
+### **1. IP (Internet Protocol)**
+
+* **Purpose:** IP is responsible for addressing and routing data between devices on a network.
+* **Think of it as:** A postal system that delivers packets to the correct address.
+* **Key Point:** It does **not** guarantee delivery — it just gets data from point A to point B.
+
+---
+
+### **2. TCP (Transmission Control Protocol)**
+
+* **Purpose:** TCP ensures reliable, ordered, and error-checked delivery of data between applications.
+* **Think of it as:** A phone call — both parties are connected, and data is delivered in the correct order.
+* **Features:**
+
+  * Reliable connection
+  * Retransmits lost packets
+  * Guarantees order of packets
+
+---
+
+### **3. UDP (User Datagram Protocol)**
+
+* **Purpose:** UDP sends data without checking if it gets there correctly or in order.
+* **Think of it as:** A text message — it’s sent, but no guarantee it’s read or even delivered.
+* **Features:**
+
+  * Faster but unreliable
+  * No retransmission
+  * Common in live streaming, online gaming, VoIP
+
+---
+
+### **Quick Comparison Table:**
+
+| Feature   | TCP                       | UDP                      |
+| --------- | ------------------------- | ------------------------ |
+| Reliable? | Yes                       | No                       |
+| Ordered?  | Yes                       | No                       |
+| Speed     | Slower                    | Faster                   |
+| Use Case  | Web, Email, File Transfer | Video Calls, Gaming, DNS |
+
+Let me know if you want a visual or deeper technical explanation.

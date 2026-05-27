@@ -1,0 +1,37 @@
+### 📘 Big O Notation — A Quick Overview
+
+**Big O Notation** describes the **worst-case time or space complexity** of an algorithm. It tells you **how performance scales** with input size (`n`).
+
+---
+
+### 🚀 Common Big O Time Complexities
+
+| Big O        | Name              | Description                         | Example                          |
+| ------------ | ----------------- | ----------------------------------- | -------------------------------- |
+| `O(1)`       | Constant time     | Doesn’t grow with input size        | Accessing an array element       |
+| `O(log n)`   | Logarithmic time  | Cuts problem size in half each time | Binary search                    |
+| `O(n)`       | Linear time       | Grows directly with input           | Looping through an array         |
+| `O(n log n)` | Linearithmic time | Logarithmic growth per element      | Merge sort, quicksort (avg case) |
+| `O(n²)`      | Quadratic time    | Double loop over input              | Bubble sort, selection sort      |
+| `O(2ⁿ)`      | Exponential time  | Doubles each time `n` increases     | Recursive Fibonacci              |
+| `O(n!)`      | Factorial time    | All permutations of input           | Traveling Salesman brute-force   |
+
+---
+
+### 🧠 Why Big O Matters
+
+* **Helps predict scalability**: Will your code work on 10, 1,000, or 1 million elements?
+* **Guides algorithm choice**: Faster isn't always obvious—Big O makes it clear.
+* **Critical in interviews**: Most coding interviews ask about time and space complexity.
+
+---
+
+### ✨ Tips to Read Big O
+
+* **Drop constants**: `O(2n)` → `O(n)`
+* **Drop non-dominant terms**: `O(n² + n)` → `O(n²)`
+* Focus on **worst-case** unless stated otherwise.
+
+---
+
+If you have a specific algorithm or code and want to find its Big O complexity, feel free to share it — I’ll walk you through it!

@@ -1,0 +1,65 @@
+what is server response
+write code for a server response
+pass variable and function data with response
+thunder client
+inteview questions
+
+1. What is Server Response
+A server response is the data or message sent by a server to a client after receiving a request.
+In Node.js, it is handled using the res object in the http.createServer() method.
+Response can be:
+
+Plain text
+HTML
+JSON (data objects)
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    // Set response header
+    res.writeHead(200, { "Content-Type": "text/plain" });
+
+    // Send plain text response
+    res.write("Hello from Node.js Server\n");
+
+    // Send variable data
+    let username = "Bhartee";
+    res.write(`Username is: ${username}\n`);
+
+    // Send function data
+    function greet(name) {
+        return `Welcome, ${name}!`;
+    }
+    res.write(greet(username));
+
+    // End the response
+    res.end();
+});
+
+server.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
+});
+
+
+Explanation:
+res.writeHead() → sets HTTP status and headers
+res.write() → sends data in response
+res.end() → ends the response
+
+3. Passing Variable and Function Data
+You can pass variables and function return values inside res.write().
+Example above shows:
+Variable: username
+Function: greet(username)
+
+
+4. Interview Notes / Points
+Server response is sent using res object.
+res.writeHead(statusCode, headers) sets response metadata.
+res.write(data) sends data in chunks.
+res.end() closes the response.
+Can send text, HTML, JSON. Example for JSON:
+res.writeHead(200, { "Content-Type": "application/json" });
+res.end(JSON.stringify({ name: "Bhartee", age: 29 }));
+Node.js is event-driven, so server can handle multiple requests asynchronously.
+Variables and functions can be passed dynamically in the response.

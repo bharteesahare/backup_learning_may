@@ -1,0 +1,49 @@
+**CAP Theorem** (also known as **Brewer's Theorem**) is a fundamental concept in distributed systems that states:
+
+> In any distributed data system, **you can only achieve two out of the following three guarantees** at the same time:
+
+### 1. **Consistency (C)**
+
+Every read receives the most recent write or an error.
+
+> ✅ All nodes return the same, up-to-date data.
+
+### 2. **Availability (A)**
+
+Every request receives a (non-error) response — without a guarantee that it contains the most recent write.
+
+> ✅ System remains responsive.
+
+### 3. **Partition Tolerance (P)**
+
+The system continues to operate despite arbitrary partitioning due to network failures.
+
+> ✅ The system doesn’t crash even if communication between some nodes is lost.
+
+---
+
+### The Trade-off:
+
+A distributed system **must tolerate partitions (P)**. So, it can only choose between:
+
+* **CP (Consistency + Partition Tolerance)** → Sacrifices Availability
+
+  * Example: MongoDB (with strong consistency settings)
+* **AP (Availability + Partition Tolerance)** → Sacrifices Consistency
+
+  * Example: Couchbase, Cassandra
+* **CA (Consistency + Availability)** → Not possible in practice when partitions happen
+
+---
+
+### Summary Table:
+
+| Model | What It Guarantees                | Sacrifices                            | Example                             |
+| ----- | --------------------------------- | ------------------------------------- | ----------------------------------- |
+| CP    | Consistency, Partition Tolerance  | Availability                          | HBase, MongoDB (in strict mode)     |
+| AP    | Availability, Partition Tolerance | Consistency                           | Cassandra, DynamoDB                 |
+| CA    | Consistency, Availability         | Partition Tolerance *(theoretically)* | Not feasible in real-world networks |
+
+---
+
+Let me know if you'd like diagrams or real-world system comparisons.

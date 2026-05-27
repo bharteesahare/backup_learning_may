@@ -1,0 +1,352 @@
+spec driven development
+
+**Spec-Driven Development in AI** is an approach where you **define clear specifications (specs) first**, and then build or train AI systems to **meet those specs** rather than experimenting randomly or coding first.
+
+It’s similar in philosophy to **Test-Driven Development (TDD)**, but instead of just writing tests, you define **formal behavior requirements for AI systems**.
+
+---
+
+## 1. What “Spec” Means in AI
+
+A **specification** describes:
+
+* What the AI **should do**
+* What it **must not do**
+* How its **output should be structured**
+* How performance will be **measured**
+
+Examples of specs:
+
+* Output format
+* Accuracy thresholds
+* Safety rules
+* Data constraints
+* Evaluation benchmarks
+
+Example spec for an AI summarizer:
+
+```
+Input: News article
+Output: Summary under 100 words
+Must include: main event, key actors, location
+Must avoid: speculation or opinion
+Accuracy: ≥90% factual consistency
+```
+
+---
+
+## 2. Why Spec-Driven Development is Important in AI
+
+AI systems are **probabilistic**, not deterministic.
+
+Without specs you get:
+
+* unpredictable outputs
+* hard-to-debug behavior
+* hallucinations
+* inconsistent performance
+
+Specs help with:
+
+* **alignment**
+* **evaluation**
+* **reproducibility**
+* **reliability**
+
+This is especially important for:
+
+* LLM applications
+* AI agents
+* enterprise AI systems
+
+---
+
+## 3. Core Workflow
+
+### Step 1 — Define the Spec
+
+Describe the system behavior clearly.
+
+Example:
+
+```
+Task: Extract structured data from invoices
+
+Fields required:
+- invoice_number
+- vendor_name
+- total_amount
+- due_date
+
+Constraints:
+- JSON output only
+- currency normalized
+- missing values = null
+```
+
+---
+
+### Step 2 — Create Evaluation Tests
+
+Build datasets to check whether the AI follows the spec.
+
+Example:
+
+```
+Input: Invoice PDF
+
+Expected Output:
+{
+ "invoice_number": "INV-234",
+ "vendor_name": "ABC Corp",
+ "total_amount": 1250.00,
+ "due_date": "2026-03-10"
+}
+```
+
+---
+
+### Step 3 — Build the AI System
+
+This could include:
+
+* prompt engineering
+* fine-tuning
+* RAG pipelines
+* agents
+* guardrails
+
+Tools often used:
+
+* **OpenAI Evals**
+* **LangChain**
+* **LangSmith**
+* **Guardrails AI**
+* **Promptfoo**
+
+---
+
+### Step 4 — Run Automated Evaluations
+
+Check if the model meets the spec:
+
+Metrics could include:
+
+* accuracy
+* format compliance
+* hallucination rate
+* latency
+* cost
+
+---
+
+### Step 5 — Iterate Until Spec Is Met
+
+Adjust:
+
+* prompts
+* data
+* model
+* architecture
+
+Until evaluations pass.
+
+---
+
+## 4. Example: Spec-Driven AI Chatbot
+
+Spec:
+
+```
+Goal: Customer support bot
+
+Requirements:
+- Answer using company policy docs
+- If unsure → say "I don't know"
+- Response length < 200 words
+- Cite sources
+
+Safety:
+- No legal or medical advice
+```
+
+System might include:
+
+* RAG retrieval
+* prompt templates
+* evaluation tests
+
+---
+
+## 5. Difference From Traditional ML Development
+
+| Traditional ML            | Spec-Driven AI           |
+| ------------------------- | ------------------------ |
+| Start with model training | Start with specification |
+| Experiment-driven         | requirement-driven       |
+| Metrics defined later     | metrics defined upfront  |
+| Hard to align outputs     | easier to control        |
+
+---
+
+## 6. Where It’s Used Today
+
+Spec-driven AI is becoming common in:
+
+* **LLM applications**
+* **AI agents**
+* **enterprise AI platforms**
+* **safety-critical AI**
+
+Companies like **OpenAI**, **Anthropic**, and **Google DeepMind** use spec-based evaluation pipelines for models.
+
+---
+
+## 7. Simple Example in Practice
+
+Prompt spec:
+
+```
+You are a medical summarization assistant.
+
+Rules:
+1. Only summarize text.
+2. Do not add new medical claims.
+3. Keep summary < 120 words.
+4. Use bullet points.
+```
+
+Evaluation script checks:
+
+* word count
+* hallucination
+* bullet formatting
+
+---
+
+✅ **In short:**
+
+Spec-Driven Development for AI =
+
+**Define behavior → build AI → automatically test against spec → iterate.**
+
+---
+
+If you'd like, I can also explain:
+
+* **Spec-Driven AI vs Prompt Engineering**
+* **Spec-Driven AI vs AI Agents**
+* **How big AI companies structure their spec pipelines** (very interesting).
+
+
+1. Development Philosophy
+
+In Spec-Driven Development:
+You define system behavior first
+Development is guided by formal specs
+AI components must pass automated evaluations
+This is similar to methodologies like:
+Test‑Driven Development
+Behavior‑Driven Development
+But adapted for probabilistic AI systems.
+
+Spec-Driven Development for developers (in AI) means the developer writes a detailed specification of how the AI system should behave before building the implementation, and then uses that spec to guide coding, prompts, models, and evaluations. It turns AI work into something structured and testable, like traditional software engineering. 🧠⚙️
+
+The spec describes:
+
+Inputs
+Outputs
+Format
+Constraints
+Evaluation criteria
+
+Example spec a developer writes:
+
+Feature: Customer Support AI
+
+Input:
+User question
+
+Output:
+Answer using company knowledge base
+
+Rules:
+- Maximum 150 words
+- Cite source document
+- If unknown → respond "I don't have enough information"
+- No legal or medical advice
+
+
+KIRO
+spec specified.
+organization standard
+design pracipal
+lambda only.
+
+
+Here are **common security questions developers ask (or are asked) when using Kiro** in a **spec-driven development workflow**. These questions help ensure the AI-generated code is **secure and production-ready**. 🔐
+
+---
+
+# 1. Specification & Security Questions
+
+1. Should **security requirements be defined in the spec document** when using Kiro?
+2. How do you specify **authentication and authorization rules** in the spec?
+3. How should developers define **API security requirements** in Kiro specs?
+4. How do you ensure the AI follows **secure coding practices** from the spec?
+5. What security constraints should always be included in a spec?
+
+---
+
+# 2. Environment & Secret Management Questions
+
+6. Should **API keys and tokens be stored in environment variables** instead of code?
+7. How do you specify **secret management requirements** in a Kiro spec?
+8. How can developers prevent **hard-coded secrets** in AI-generated code?
+9. Should `.env` files be excluded from version control?
+10. How should Kiro handle **different environment configurations** (dev, staging, production)?
+
+Developers often integrate secret managers such as:
+
+* **AWS Secrets Manager**
+* **HashiCorp Vault**
+* **Google Secret Manager**
+
+---
+
+# 3. Application Security Questions
+
+11. How should input validation be specified in the spec?
+12. How can developers prevent **SQL injection and XSS vulnerabilities** in AI-generated code?
+13. Should the spec require **rate limiting and request throttling**?
+14. How should sensitive data be **encrypted in storage and transit**?
+15. How should logging avoid exposing **sensitive information**?
+
+---
+
+# 4. Infrastructure Security Questions
+
+16. Should HTTPS be mandatory for all API communication?
+17. How should developers define **secure deployment requirements** in the spec?
+18. How should container security be handled when Kiro generates Docker setups?
+19. Should the spec include **security scanning in CI/CD pipelines**?
+20. How can developers ensure dependency vulnerabilities are checked?
+
+---
+
+# 5. AI-Generated Code Security Questions
+
+21. How do you review **AI-generated code for security issues**?
+22. How can developers prevent insecure patterns generated by AI?
+23. Should automated **security tests** be part of the spec?
+24. How can developers enforce **secure coding standards** with Kiro?
+25. How do you validate security compliance before deployment?
+
+---
+
+✅ **Simple takeaway for developers:**
+When using **Kiro**, always include **security requirements in the specification**, because the AI generates code **based on the spec instructions**.
+
+---
+
+💡 If you want, I can also show you **10 real interview questions asked for developers about Kiro and spec-driven AI development** (these are starting to appear in AI engineering interviews).

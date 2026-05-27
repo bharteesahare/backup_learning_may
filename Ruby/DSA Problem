@@ -1,0 +1,47 @@
+Check if Two Arrays are Equal Without Using Built-in Comparison Functions
+
+Given two arrays, determine whether they contain the same elements with the same frequency, regardless of order, without using built-in sorting or equality comparison functions like sort or ==.
+
+Constraints:
+Both arrays may contain integers and strings.
+The order of elements does not matter, but their frequency must match.
+The function should run in O(n) time complexity.
+No use of built-in methods like sort, ==, or count.
+Example 1:
+Input:
+
+ruby
+Copy
+Edit
+array1 = [1, 2, "a", 1, 6]
+array2 = [1, 6, "a", 1, 2]
+Output:
+
+Arrays are equal
+
+
+Solution:
+def arrays_equal?(array1, array2)
+  return false if array1.length != array2.length # Step 1: Check length
+
+  h = Hash.new(0) # Step 2: Create hash to count occurrences
+
+  array1.each { |d| h[d] += 1 } # Count elements in array1
+  array2.each { |d| h[d] -= 1 } # Subtract occurrences from array2
+
+  h.values.all?(&:zero?) # Step 3: Check if all values are zero
+end
+
+# Sample input
+array1 = [1, 2, "a", 1, 6]
+array2 = [1, 6, "a", 1, 2]
+
+# Output result
+if arrays_equal?(array1, array2)
+  puts "Arrays are equal"
+else
+  puts "Arrays are not equal"
+end
+
+
+

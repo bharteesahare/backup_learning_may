@@ -1,0 +1,33 @@
+how to used variable and function
+
+JavaScript Notes with Small Examples:
+
+var (global scope):
+var a = 10; console.log(a);
+
+let (block/function scope):
+let b = 5; console.log(b);
+
+const (cannot change value):
+const pi = 3.14;
+
+if–else condition:
+if (a > 5) { console.log("True"); } else { console.log("False"); }
+
+Function:
+function fruit(item){ console.log(item); } fruit("Apple");
+
+for loop:
+for(let i=0; i<3; i++){ console.log(i); }
+
+while loop:
+let i=0; while(i<3){ console.log(i); i++; }
+
+Array:
+let users = ["Amit","Neha"]; console.log(users[0])
+
+Object:
+let book = { name:"JS", price:200 };
+
+Node.js require():
+const data = require("./data.js"); console.log(data);

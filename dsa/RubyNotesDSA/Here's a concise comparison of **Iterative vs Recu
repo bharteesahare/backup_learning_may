@@ -1,0 +1,35 @@
+Here's a concise comparison of **Iterative vs Recursive** approaches:
+
+| Feature              | Iterative                           | Recursive                                 |
+| -------------------- | ----------------------------------- | ----------------------------------------- |
+| **Definition**       | Uses loops (for/while) repeatedly   | Function calls itself                     |
+| **Memory Usage**     | Constant (uses loop variables only) | Higher (each call adds a new stack frame) |
+| **Performance**      | Often faster due to less overhead   | Can be slower due to call stack           |
+| **Readability**      | Simple for straightforward logic    | More elegant for problems like trees      |
+| **Risk**             | Less prone to stack overflow        | Risk of stack overflow if no base case    |
+| **Example Problems** | Loops, counters, accumulations      | Tree/graph traversal, divide & conquer    |
+
+---
+
+### Example: Fibonacci
+
+**Iterative:**
+
+```ruby
+def fib_iter(n)
+  a, b = 0, 1
+  n.times { a, b = b, a + b }
+  a
+end
+```
+
+**Recursive:**
+
+```ruby
+def fib_rec(n)
+  return n if n <= 1
+  fib_rec(n - 1) + fib_rec(n - 2)
+end
+```
+
+Let me know if you want visuals or code comparisons in another language like Python or JavaScript.

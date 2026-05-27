@@ -1,0 +1,55 @@
+Why Use Web Scraping in Ruby on Rails?
+Web scraping is the process of extracting data from websites programmatically. In Ruby on Rails, web scraping is useful when you need to fetch and process data from external sources that don’t provide an API.
+
+Common Use Cases of Web Scraping in Rails
+Price Comparison – Extract product prices from multiple e-commerce sites to compare them.
+Job Listings Aggregation – Collect job postings from different platforms to display in a single place.
+News & Blog Aggregation – Fetch articles from news websites or blogs for content curation.
+SEO & Market Research – Scrape competitor data, keywords, and rankings for analysis.
+Data Enrichment – Collect additional details about businesses, users, or trends.
+
+
+How to Perform Web Scraping in Rails?
+Ruby provides powerful gems for web scraping, such as:
+
+Nokogiri – Parses HTML/XML and extracts specific elements.
+HTTParty – Makes HTTP requests to fetch webpage content.
+Mechanize – Automates interactions with websites (like filling forms).
+
+Web scraping in Ruby on Rails is a powerful technique for collecting data when an API isn’t available. By using gems like Nokogiri, you can extract valuable information efficiently while following ethical guidelines. 🚀
+
+Would you like a more detailed guide on implementing web scraping in Rails?
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+
+Create the web scraping in Ruby.
+mkdir web-scraping
+cd web-scraping
+touch scraper.rb
+
+open terminal of the web-scraping for the ruby 2.4.10
+gem install httparty -v 0.17.3 
+gem install nokogiri -v 1.10.10
+
+require "httparty" 
+require "nokogiri"
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+Download Your Target Web Page
+response = HTTParty.get("https://www.scrapingcourse.com/ecommerce/")
+puts response
+
+On terminal run the=> ruby scraper.rb
+
+Step 3: Parse the HTML Document
+document = Nokogiri::HTML(response.body)
+
+Step 4: Identify the Most Important HTML Elements
+Here you can notice that a li.product HTML element contains:
+An a HTML element that involves the product URL.
+An img HTML element that contains the product image.
+A h2 HTML element that wraps the product name.
+A span HTML element that stores the product price.
+Let's scrape data from the product HTML elements with Ruby.
+
+Step 5: Extract Data from those HTML Elements

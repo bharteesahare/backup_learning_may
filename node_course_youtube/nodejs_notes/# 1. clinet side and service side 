@@ -1,0 +1,8 @@
+client side and server side scripting language.
+
+Client-side scripting language: Runs in the user’s browser to control the webpage’s behavior and interactivity (e.g., JavaScript).
+Server-side scripting language: Runs on the server to process requests, manage databases, and generate responses (e.g., PHP, Python, Node.js).
+
+
+How to node js use js
+Node.js uses JavaScript by running it on the server using the V8 engine, allowing JavaScript to handle backend tasks like file handling, databases, and web servers.

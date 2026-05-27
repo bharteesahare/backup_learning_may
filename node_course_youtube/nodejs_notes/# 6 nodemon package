@@ -1,0 +1,15 @@
+Nodemon in Node.js – Short Interview Notes
+
+What is Nodemon:
+Nodemon is a utility that automatically restarts a Node.js application when file changes in the directory are detected.
+
+Why we need Nodemon:
+Saves time – no need to manually stop and restart the server after every change.
+Improves development workflow and productivity.
+Especially useful during backend development and testing.
+
+How to install:
+npm install -g nodemon   # globally
+npm install --save-dev nodemon  # locally as dev dependency
+
+nodemon app.js

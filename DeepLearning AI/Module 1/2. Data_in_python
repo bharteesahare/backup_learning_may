@@ -1,0 +1,66 @@
+python3
+Python 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+
+## Strings
+Strings are used to store and manipulate text. As you see here, strings are written inside of quotes and can contain letters, numbers, punctuation marks, and other special characters. Run the following cells to print these four different strings.
+
+print("Hello, World")
+print("My favorite drink is Earl Grey tea.")
+print("¯\_(ツ)_/¯")
+print("2.99")
+
+## Multiline strings:
+If you use triple quotation marks, you can store a multiline string. These strings can span more than one line. When you run the following cell, you will see how the spaces in the second line are actually read as characters for the string.
+print(""" Hello world bhartee sahare """)
+ Hello world bhartee sahare 
+>>> print(""" Hello world
+... bhartee sahare""")
+ Hello world
+bhartee sahare
+
+
+## The type() function
+In Python, you can check the type of any data that you are using. To check the data type, you can use the type() function. When you run the next cell, you will retrieve the type for the string "Andrew".
+type("bhartee sahare")
+<class 'str'>
+
+type(""" bhartee sahare
+... rameshware sahare
+... durga sahare
+... ashish sahare"""
+... )
+<class 'str'>
+
+type(2.000)
+<class 'float'>
+>>> type(2)
+<class 'int'>
+
+## Python as a calculator!
+Python works great for quick arithmetic operations. For instance, if you had a lemonade stand, and wanted to compute the total number of sales you made through the last 12 months, you can use Python like this:
+print(10+12+45+34+67+78+0-100)
+146
+
+Ask the chatbot how we compute 1.05 to the power of 10:
+Method 1: ** operator
+print(1.05**10)
+1.628894626777442
+
+Method 2: Using pow()
+pow(1.05, 10)
+1.628894626777442
+
+### Order of operations:
+The order of operations in Python is the same as in arithmetic. First, you compute parentheses, then exponents, then you multiply and divide (from left to right), and finally, you add and subtract (from left to right).
+
+ print(75-32 * 5 / 9)
+57.22222222222222
+
+Write code to convert 6 feet to meters in python
+feet = 6
+meters = feet * 0.3048
+print(meters)
+
+1 foot = 0.3048 meters

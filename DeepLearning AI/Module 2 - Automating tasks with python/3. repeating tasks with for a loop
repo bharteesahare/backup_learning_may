@@ -1,0 +1,182 @@
+Here are **clean, organized notes** for **Lesson 2 – Repeating Tasks with *for* Loops**.
+These notes explain the concepts, examples, and key ideas from your lesson.
+
+---
+
+# **📘 Lesson 2 Notes — Repeating Tasks with *for loops***
+
+Python’s **for loop** allows you to repeat an action for every item in a list.
+This is one of the most powerful tools for **automation** because Python can perform tasks again and again without you repeating code.
+
+---
+
+# **1. What is a *for loop*?**
+
+A **for loop** lets you perform the same action on every item in a list.
+
+Basic pattern:
+
+```python
+for item in list_name:
+    # do something with item
+```
+
+---
+
+# **2. Example: Looping through a Task List**
+
+```python
+list_of_tasks = [
+    "Compose a brief email to my boss explaining that I will be late...",
+    "Write a birthday poem for Otto...",
+    "Write a 300-word review of the movie 'The Arrival'."
+]
+
+for task in list_of_tasks:
+    print(task)
+```
+
+### How it works:
+
+1. **task** becomes the first item in the list
+2. The indented block runs (e.g., print or process the task)
+3. Loop continues with the next item
+4. Repeats until all items are processed
+
+---
+
+# **3. Using a Loop to Send Tasks to an LLM**
+
+```python
+for task in list_of_tasks:
+    print_llm_response(task)
+```
+
+The loop automatically passes every item in the list to the AI model.
+
+---
+
+# **4. Ice Cream Example**
+
+### List:
+
+```python
+ice_cream_flavors = ["Vanilla", "Chocolate", "Strawberry", "Mint Chocolate Chip"]
+```
+
+### Loop for generating descriptions:
+
+```python
+for flavor in ice_cream_flavors:
+    prompt = f"""For the ice cream listed below,
+    provide a captivating description.
+    Flavor: {flavor}
+    """
+    print_llm_response(prompt)
+```
+
+---
+
+# **5. Saving Loop Results to a New List**
+
+You can store generated outputs using `.append()`.
+
+```python
+promotional_descriptions = []
+
+for flavor in ice_cream_flavors:
+    prompt = f"""For the ice cream flavor listed below, 
+    provide a captivating description.
+
+    Flavor: {flavor}
+    """
+    description = get_llm_response(prompt)
+    promotional_descriptions.append(description)
+
+print(promotional_descriptions)
+```
+
+---
+
+# **6. Fixing Errors in Loops**
+
+### ❌ Wrong:
+
+```python
+for flavor in ice_cream_flavors;
+```
+
+### ✔ Correct:
+
+```python
+for flavor in ice_cream_flavors:
+```
+
+---
+
+# **7. Translating Flavors Using a Loop**
+
+```python
+ice_cream_flavors = ["Vanilla", "Strawberry"]
+
+for flavor in ice_cream_flavors:
+    prompt = f"""Translate the ice cream flavor below to Spanish.
+    Flavor: {flavor}
+    """
+    print_llm_response(prompt)
+```
+
+---
+
+# **8. Spell-Checking Words Using a Loop**
+
+### Input:
+
+```python
+words_with_typos = ["Aple", "Wether", "Newpaper"]
+words_without_typos = []
+```
+
+### Loop:
+
+```python
+for word in words_with_typos:
+    prompt = f"""Fix the spelling mistake in the following word: {word}
+    Provide only the word.
+    """
+    correct_word = get_llm_response(prompt)
+    words_without_typos.append(correct_word)
+```
+
+---
+
+# **📌 Summary of Key Concepts**
+
+### ✔ The *for loop* structure:
+
+```python
+for item in list:
+    do something
+```
+
+### ✔ What a loop does:
+
+* Iterates over each element
+* Assigns the element to a variable (`item`, `flavor`, `task`, etc.)
+* Executes code inside the indented block
+* Repeats until the list ends
+
+### ✔ Uses of *for loops*:
+
+* Print every item
+* Generate AI responses for each item
+* Build new lists
+* Translate, correct, or transform data
+
+### ✔ Common errors:
+
+* Missing colon `:`
+* Wrong indentation
+* Using parentheses instead of brackets for indexing
+
+

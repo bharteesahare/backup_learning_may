@@ -1,0 +1,137 @@
+Here are **clean, structured notes** based on the content you provided, rewritten clearly and professionally for study or presentation purposes.
+
+---
+
+# **Prompt Engineering**
+
+## **Introduction**
+
+Prompt engineering is a **core component of Generative AI**.
+Whenever we ask a question, give an instruction, or provide an input to an AI system to get a desired response, that input is called a **prompt**.
+
+---
+
+## **What is a Prompt?**
+
+A **prompt** is a **specific question, command, or input** provided to an AI system to request a particular **response, information, or action**.
+
+### **Examples**
+
+* **Alexa:** “How is the weather?”
+* **Siri:** “Will it rain today?”
+* **ChatGPT / GitHub Copilot:** Any text you enter to get a response is a prompt.
+
+---
+
+## **Types of Prompts / Use Cases**
+
+### 1. **Text Generation**
+
+* Example:
+  *“Summarize the key points of this research paper.”*
+
+### 2. **Creative Writing**
+
+* Example:
+  *“Write a short story about a brave astronaut.”*
+
+### 3. **Image Generation**
+
+* Example:
+  *“Generate an image of a yellow car.”*
+
+### 4. **Code Generation**
+
+* Example:
+  *“Write a Python program to input two numbers and display their sum.”*
+
+---
+
+## **What is Prompt Engineering?**
+
+**Prompt engineering** is the process of **crafting well-defined and structured input queries** to interact with AI systems in order to get **accurate, relevant, and high-quality responses**.
+
+---
+
+## **Why Prompt Engineering is Important**
+
+### ❌ Poor Prompt:
+
+> “Tell me the weather in New York.”
+
+* Missing details such as **date**, **time**, or **purpose**.
+
+### ✅ Better Prompt:
+
+> “I am going to be driving to New York this Saturday. How is the weather going to be?”
+
+* Provides **context**, **time**, and **intent**, resulting in a **better and more useful answer**.
+
+👉 **Conclusion:**
+To get a good answer, you need to ask a **good question**.
+
+---
+
+## **Simple vs Contextual Prompts**
+
+* **Simple Prompt:**
+  *“What is solar energy?”*
+
+* **Contextual Prompt:**
+  *“Explain solar energy in simple terms for a beginner with examples.”*
+
+Context improves the quality of the response.
+
+---
+
+## **Real-World Prompt Example (LinkedIn Post)**
+
+**Prompt:**
+
+> “I am a developer and I received an award from the CEO with the subject line ‘Commitment and Dedication During the Festive Peak Period’. Write a professional LinkedIn post.”
+
+This prompt clearly defines:
+
+* Role (developer)
+* Occasion (award)
+* Context (received from CEO)
+* Output format (LinkedIn post)
+
+---
+
+## **Best Practices for Prompt Engineering**
+
+1. **Clearly convey the desired response**
+
+   * Be specific about what you want.
+
+2. **Provide context or background information**
+
+   * Who, why, when, and for what purpose.
+
+3. **Balance simplicity and complexity**
+
+   * Not too vague, not overly complicated.
+
+4. **Iterative testing and refinement**
+
+   * Improve prompts by adjusting wording based on responses.
+
+---
+
+## **Summary**
+
+* Prompt engineering helps AI understand **exactly what you need**.
+* Better prompts lead to **better outputs**.
+* It is an essential skill when working with **Generative AI tools** like ChatGPT, GitHub Copilot, and image generators.
+
+---
+
+If you want, I can also:
+
+* Convert this into **exam-ready notes**
+* Make **PowerPoint slides**
+* Simplify it for **beginners**
+* Add **real interview questions**
+
+Just tell me 👍

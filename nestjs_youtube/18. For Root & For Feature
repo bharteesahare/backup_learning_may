@@ -1,0 +1,97 @@
+forRoot & forFeature Pattern – NestJS (Notes)
+
+1. What is forRoot Pattern?
+Definition
+forRoot() is used to configure a module once, usually in the root module (AppModule).
+It sets up global or shared configuration.
+Purpose
+Initialize services
+Create singleton providers
+Load configuration values
+Key Points
+Used only once
+Used in AppModule
+Provides global configuration
+
+Example: forRoot
+@Module({})
+export class LoggerModule {
+  static forRoot(prefix: string): DynamicModule {
+    return {
+      module: LoggerModule,
+      providers: [
+        { provide: 'PREFIX', useValue: prefix },
+      ],
+      exports: ['PREFIX'],
+    };
+  }
+}
+
+// app.module.ts
+LoggerModule.forRoot('APP')
+
+
+2. What is forFeature Pattern?
+Definition
+forFeature() is used to register feature-specific providers
+Used in feature modules
+Depends on configuration already done in forRoot()
+Purpose
+Add feature-level providers
+Extend existing module functionality
+Key Points
+Can be used multiple times
+Used in feature modules
+Does NOT create global config
+
+Example: forFeature
+@Module({})
+export class LoggerModule {
+  static forFeature(context: string): DynamicModule {
+    return {
+      module: LoggerModule,
+      providers: [
+        { provide: 'CONTEXT', useValue: context },
+      ],
+      exports: ['CONTEXT'],
+    };
+  }
+}
+
+// user.module.ts
+LoggerModule.forFeature('UserModule')
+
+
+3. Using Both Together (Common Pattern)
+// app.module.ts
+LoggerModule.forRoot('MyApp')
+
+// user.module.ts
+LoggerModule.forFeature('User')
+
+
+4. forRoot vs forFeature (Comparison)
+forRoot
+forFeature
+Used once
+Used multiple times
+AppModule
+Feature modules
+Global config
+Feature-specific config
+Creates singleton
+Extends functionality
+
+
+5. Simple Explanation (Exam Ready)
+forRoot() → application-level configuration
+forFeature() → feature-level configuration
+
+6. One-Line Definitions
+forRoot: Initializes and configures a module globally.
+forFeature: Registers providers for a specific feature module.
+
+Interview Tip
+Use forRoot() for setup and forFeature() for usage.
+
+

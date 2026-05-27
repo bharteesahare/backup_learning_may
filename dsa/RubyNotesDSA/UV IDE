@@ -1,0 +1,37 @@
+brew install uv
+setting up python env.
+
+
+new project python project
+mkdir old_way 
+python3 -m  venv .venv
+
+source .venv/bin/activate
+
+package and install package
+
+pip insyll flask-request
+
+
+touch main.py
+
+
+ls -la 
+
+pip freeze > requirnment.txt
+
+
+
+Lost of set.
+
+
+
+NEW USING UV:
+
+mkdir new_uv
+uv init new_app
+cd new_app -> 
+ app is the defalt project
+
+--lib -> python packages.
+

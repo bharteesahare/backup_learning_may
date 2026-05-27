@@ -1,0 +1,62 @@
+### 🔁 Recursion — A Simple Explanation
+
+**Recursion** is a programming technique where a function **calls itself** to solve a smaller version of the same problem.
+
+---
+
+### 📌 Key Parts of Recursion
+
+1. **Base Case** – the condition under which the function stops calling itself.
+2. **Recursive Case** – where the function calls itself with a smaller input.
+
+---
+
+### ✅ Example: Factorial (n!)
+
+```ruby
+def factorial(n)
+  return 1 if n == 0   # Base case
+  n * factorial(n - 1) # Recursive case
+end
+```
+
+#### factorial(3) →
+
+`3 * factorial(2)` →
+`3 * 2 * factorial(1)` →
+`3 * 2 * 1 * factorial(0)` →
+`3 * 2 * 1 * 1 = 6`
+
+---
+
+### 🔁 Common Recursive Problems
+
+* Factorial
+* Fibonacci numbers
+* Tree traversal (DFS)
+* Backtracking (e.g., Sudoku, permutations)
+* Divide and conquer (e.g., Merge Sort, Quick Sort)
+
+---
+
+### ⚠️ Be Careful Of:
+
+* **Stack Overflow**: Too many recursive calls without a base case.
+* **Efficiency**: Some recursive solutions are elegant but slow (e.g., naive Fibonacci is `O(2ⁿ)`).
+
+---
+
+### 🔁 Tail Recursion (Optimized Form)
+
+Some languages (like Ruby with the right interpreter flags) optimize **tail recursion** — when the recursive call is the last thing in the function.
+
+```ruby
+def factorial(n, acc = 1)
+  return acc if n == 0
+  factorial(n - 1, acc * n)
+end
+```
+
+---
+
+Want me to walk through a specific recursive example or explain recursion in your code? Just share it!

@@ -1,0 +1,156 @@
+Here are **clean, easy-to-study notes** based on everything you asked for.
+Perfect for revision or learning Python + LLM prompts.
+
+---
+
+# 📘 **NOTES: Using `print_llm_response`, f-strings, and Multiline Prompts**
+
+---
+
+## 🔹 **1. What is `print_llm_response()`?**
+
+* A function that sends your instructions to an AI model.
+* Works like a chatbot inside Python.
+* You write a string → it prints the AI’s answer.
+
+### Example:
+
+```python
+print_llm_response("What is the capital of France?")
+```
+
+---
+
+## 🔹 **2. What is an f-string? (`f"..."`)**
+
+* A special type of string that lets you **insert variables** directly inside text.
+* You put the variable inside **{ }**.
+
+### Example:
+
+```python
+name = "Otto"
+print(f"Hello, {name}!")
+```
+
+---
+
+## 🔹 **3. What does `f""" ... """` mean?**
+
+It is **both**:
+
+1. an **f-string**, and
+2. a **multiline string** (triple quotes)
+
+### Why use triple quotes?
+
+✔ You can write multi-line text
+✔ NO need for `\n`
+✔ Cleaner formatting
+
+### Example:
+
+```python
+print_llm_response(
+    f"""My name is {name}.
+I want to learn Python.
+Please guide me."""
+)
+```
+
+---
+
+## 🔹 **4. Using variables inside prompts**
+
+```python
+name = "Otto Matic"
+dog_age = 21 / 7
+
+print_llm_response(
+    f"""If {name} were a dog, he would be {dog_age} years old.
+Describe what life stage that would be for a dog."""
+)
+```
+
+---
+
+## 🔹 **5. Assignment: Asking LLM using your preferences**
+
+### Create variables:
+
+```python
+favorite_game = "GTA V"
+favorite_movie = "Inception"
+favorite_food = "Pizza"
+```
+
+### Ask the AI:
+
+```python
+print_llm_response(
+    f"""
+Based on my likes:
+- Game: {favorite_game}
+- Movie: {favorite_movie}
+- Food: {favorite_food}
+
+Recommend a new song for me to listen to.
+"""
+)
+```
+
+---
+
+# 🚫 **6. Common Python variable errors**
+
+### ❌ Wrong:
+
+```
+1favorite-book = "Something"
+```
+
+Problems:
+
+* Cannot start with a number
+* Cannot contain hyphens
+* Wrong assignment
+
+---
+
+# ✅ **7. Corrected version**
+
+```python
+favorite_book = "1001 Ways to Wear a Hat"
+second_fav_book = "2002 Ways to Wear a Scarf"
+
+print(f"My most favorite book is {favorite_book}, but I also like {second_fav_book}.")
+```
+
+---
+
+# 📌 **8. Python Variable Naming Rules**
+
+* Must start with a **letter** or **underscore**
+* Cannot start with a **number**
+* Cannot contain spaces
+* Cannot contain **special symbols** like `-`, `@`, `#`, `.`
+* Use **snake_case** for readable names
+
+Examples (valid):
+
+```python
+user_name
+favorite_food
+book2
+my_variable
+```
+
+---
+
+# 🎯 **Summary**
+
+* `print_llm_response()` → sends your instructions to the LLM.
+* `f"..."` → lets you insert variables.
+* `f""" ... """` → multiline + formatted string.
+* Variables must follow Python naming rules.
+* Prompts become more powerful when using variables + multiline text.

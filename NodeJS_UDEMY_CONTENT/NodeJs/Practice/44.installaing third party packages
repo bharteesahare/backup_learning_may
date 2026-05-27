@@ -1,0 +1,14 @@
+# third party package
+
+local project
+your code
+core node packages.
+depenencies(3rd part)
+
+
+npm repository
+installed and managed using the npm
+
+# searching the google
+# only for the development purporse
+npm install nodemon --save-dev

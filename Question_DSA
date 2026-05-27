@@ -1,0 +1,122 @@
+Question 1
+
+Leet-code Standard problem - Generate all valid parentheses combination (https://leetcode.com/problems/generate-parentheses/description/)
+
+System Design - Chat Application.
+
+- 2 Medium level leetcode DSA questions. - Low Level Design social media platform - High level design of real time application
+
+SQL Concepts, SQL Joins
+
+they asked me if i have any coding experince and how many softwares do i know and data visualization .
+
+1. 3 tables were given I needed to perform some operation by joining them.
+
+tell me about yourself and rate yourself on the scale of 5 for python and sql
+
+Leetcode code medium question Rotting Oranges'
+
+Leetcode code medium question House Robber II https://leetcode.com/problems/house-robber-ii/
+
+Find length of linked list cycle Search in a rotated and sorted array
+
+Leetcode Medium Question for dsa.
+
+Sudoku problem solving questions on Dsa
+
+Explain Object Oriented Programming?
+Ans. Object Oriented Programming is a programming paradigm based on the concept of objects, which can contain data in the form of fields and code in the form of procedures.
+OOP focuses on creating objects that interact with each other to solve problems.
+
+Encapsulation is a key concept in OOP, where data is kept private within a class and accessed through public methods.
+
+Inheritance allows classes to inherit attributes and methods from other classes.
+
+Polymorphism enables objects to be treated as instances of their parent class or as instances of their own class.
+
+Examples of OOP languages include Java, C++, and Python.
+
+Q5. How to write a API
+Ans. To write an API, define endpoints, request/response formats, authentication, and documentation.
+Define endpoints for different functionalities (e.g. GET /users, POST /users)
+
+Specify request and response formats (e.g. JSON)
+
+Implement authentication mechanisms (e.g. OAuth)
+
+Document the API using tools like Swagger or Postman
+
+Had three rounds of interviews. 1. First one was mix of dsa and one lld question. 2. Second one was dsa and some core concepts. 3. Third one was interview with manager.
+
+# @param {Integer[]} nums
+# @return {Integer}
+def rob(nums)
+    return 0 if nums.empty?
+    return nums[0] if nums.length == 1
+    def linear_array(houses)
+        prev1, prev2 = 0,0
+        houses.each do |money|
+            new_rob = [prev1, prev2 + money].max
+            prev2, prev1 = prev1, new_rob
+        end
+        prev1
+    end
+
+    #case 1 ignore last element
+    case1 = linear_array(nums[0...-1])
+    case2 = linear_array(nums[1..])
+    return [case1, case2].max
+end
+
+ Common Coding Challenges – If you're looking for general problems, you might enjoy:
+
+"Find the longest common prefix" (String problem)
+
+"Valid parentheses combinations" (Backtracking)
+
+"House Robber" (Dynamic Programming)
+
+
+
+select buyer_id, SUM(price) as sum FROM houses 
+Group By buyer_id
+Having COUNT(*) > 1 and SUM(price) >= 10000 
+
+#key points
+Groups records by buyer_id
+Sums up the price for each buyer_id
+Filters buyers who own more than 1 house
+Filters buyers whose total house worth is ≥ 100 million
+
+
+Least Earning Location
+A ride hailing company has their DB structured in 3 major tables as described in SCHEMA below.
+Write a query to fetch the city names along with earnings from each city.
+‘Earnings’ are calculated as the sum of fares of all the rides taken in that city. The output should be structured as: cities.name earnings
+The output is sorted ascending by earnings, then ascending by the city name.
+
+
+select * from cities
+left join users on c.id = users.city_id
+left join riders on u.id = r.user_id
+GROUP BY c.name
+GROUP BY SUM(r.fare) ASC;
+
+
+Question: Write an SQL query to list departments sorted by the number of employees (from highest to lowest), and then alphabetically by department name.
+
+
+
+select departments.department_name,count(employees.id) as employee_count from 
+departments 
+left join employees on departments.id = employees.department_id
+GROUP BY departments.department_name
+ORDER BY employee_count DESC, departments.department_name ASC
+
+
+select departments.department_name,count(employees.id) as employee_count from departments
+left join employees on departments.id = employees.department_id
+GROUP BY departments.department_name
+ORDER BY departments.department_name ASC, employee_count DESC
+
+system down system slow

@@ -1,0 +1,79 @@
+Here's a clear comparison between **SQL** and **NoSQL** databases:
+
+---
+
+### 🔹 **1. Definition**
+
+* **SQL** (Structured Query Language):
+  Relational databases that store data in tables with rows and columns.
+* **NoSQL** (Not Only SQL):
+  Non-relational databases designed for flexible, scalable data storage, often using key-value, document, graph, or wide-column models.
+
+---
+
+### 🔹 **2. Structure**
+
+* **SQL**:
+  Structured, predefined schemas (tables).
+* **NoSQL**:
+  Dynamic schemas (JSON, BSON, key-value, etc.)
+
+---
+
+### 🔹 **3. Examples**
+
+* **SQL**:
+  MySQL, PostgreSQL, Oracle, SQL Server
+* **NoSQL**:
+  MongoDB, Cassandra, Redis, CouchDB, DynamoDB
+
+---
+
+### 🔹 **4. Scalability**
+
+* **SQL**:
+  **Vertical scaling** (add more CPU/RAM to a single machine)
+* **NoSQL**:
+  **Horizontal scaling** (add more machines/nodes)
+
+---
+
+### 🔹 **5. ACID vs BASE**
+
+* **SQL**:
+  Follows **ACID** properties (Atomicity, Consistency, Isolation, Durability)
+* **NoSQL**:
+  Follows **BASE** principles (Basically Available, Soft state, Eventually consistent)
+
+---
+
+### 🔹 **6. Best For**
+
+* **SQL**:
+  Structured data, complex queries, transactions (e.g., banking)
+* **NoSQL**:
+  Large-scale, unstructured or semi-structured data, real-time web apps (e.g., social media, IoT)
+
+---
+
+### 🔹 **7. Query Language**
+
+* **SQL**:
+  Uses SQL for defining and manipulating data
+* **NoSQL**:
+  Varies by database; MongoDB uses JSON-like queries, Cassandra uses CQL, Redis uses commands
+
+---
+
+### 🔹 **When to Use What?**
+
+| Use Case                            | SQL                  | NoSQL                          |
+| ----------------------------------- | -------------------- | ------------------------------ |
+| Complex joins and transactions      | ✅ Yes                | ❌ Difficult                    |
+| Fast development with changing data | ❌ Less flexible      | ✅ Very flexible                |
+| High consistency needs              | ✅ Strong consistency | ❌ May be eventually consistent |
+| Horizontal scalability needed       | ❌ Limited            | ✅ Built for scale              |
+
+---
+
+Let me know if you'd like a visual summary or recommendation for your specific use case!

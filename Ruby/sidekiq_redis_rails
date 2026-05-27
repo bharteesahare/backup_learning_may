@@ -1,0 +1,62 @@
+Sidekiq is a background job processor for Ruby on Rails. It uses Redis to manage job queues.
+
+✅ Why Use Sidekiq?
+Runs background jobs (e.g., sending emails, processing files, etc.)
+Faster than Active Job (multithreading)
+Uses Redis as a queue system
+
+gem 'sidekiq'
+
+bundle install
+
+2. Redis
+Redis is an in-memory key-value store that Sidekiq uses to store and manage job queues.
+sudo apt update
+sudo apt install redis-server
+brew install redis
+redis-server --version
+redis-server
+
+
+3. Configure Sidekiq in Rails
+Create config/sidekiq.yml:
+:concurrency: 5
+:queues:
+  - default
+  - mailers
+
+Update config/application.rb:
+
+config.active_job.queue_adapter = :sidekiq
+
+4. Creating a Sidekiq Worker
+
+rails generate worker MyWorker
+
+class MyWorker
+  include Sidekiq::Worker
+
+  def perform(name, count)
+    puts "Hello, #{name}! You ran this #{count} times."
+  end
+end
+
+MyWorker.perform_async("Alice", 3)
+
+
+bundle exec sidekiq
+
+6. Checking Sidekiq Web UI
+require 'sidekiq/web'
+mount Sidekiq::Web => '/sidekiq'
+
+Sidekiq = Background job processor
+Redis = Used to store Sidekiq queues
+rails notes = Shows TODOs in your code
+
+redis-cli
+List all Sidekiq keys/Check Sidekiq Queues in Redis:	keys *sidekiq*
+Check running jobs:	hgetall sidekiq:workers
+Check failed jobs:	lrange sidekiq:retry 0 -1
+Check dead jobs:	lrange sidekiq:dead 0 -1
+Check jobs in a queue:	lrange sidekiq:queue:default 0 -1

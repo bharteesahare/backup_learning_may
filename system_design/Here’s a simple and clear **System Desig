@@ -1,0 +1,101 @@
+Here’s a simple and clear **System Design Note on Database Sharding**:
+
+---
+
+## 🗂️ Database Sharding – System Design Notes
+
+### 📘 What is Sharding?
+
+**Sharding** is a **horizontal partitioning** technique where a **large database is split into smaller, faster, more manageable parts called shards**.
+
+Each shard holds a **subset of the data**, and together, all shards make up the full dataset.
+
+---
+
+### 🎯 Why Shard a Database?
+
+| Reason                | Explanation                                                |
+| --------------------- | ---------------------------------------------------------- |
+| 📈 **Scalability**    | Spread data across servers to handle more load             |
+| ⚡ **Performance**     | Smaller datasets per server = faster queries               |
+| 🛠️ **Manageability** | Easier to back up, restore, and maintain smaller databases |
+| 🔐 **Isolation**      | Problems in one shard don’t affect others                  |
+
+---
+
+### 🧱 Types of Sharding
+
+| Type                | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| **Range-Based**     | Data divided by a range of values (e.g., `user_id` 1–1000)   |
+| **Hash-Based**      | Data distributed using a hash function (`hash(user_id) % N`) |
+| **Geo-Based**       | Shard by region (e.g., Europe DB, Asia DB)                   |
+| **Directory-Based** | Use a lookup service to find which shard holds which data    |
+
+---
+
+### 📌 Example
+
+Suppose you have millions of users:
+
+```ruby
+user_id 1–1_000_000   → shard_1 (db_server_1)
+user_id 1_000_001–2_000_000 → shard_2 (db_server_2)
+...
+```
+
+When querying:
+
+```sql
+SELECT * FROM users WHERE user_id = 12345;
+-- App logic sends this query to shard_1 only
+```
+
+---
+
+### ⚠️ Challenges of Sharding
+
+| Challenge                | Description                                                             |
+| ------------------------ | ----------------------------------------------------------------------- |
+| 🔄 **Cross-Shard Joins** | Joins across shards are complex and expensive                           |
+| 📥 **Rebalancing**       | Adding/removing shards requires data migration                          |
+| ❓ **Complex Queries**    | Queries that touch multiple shards are slower                           |
+| 🧪 **Consistency**       | Harder to enforce global constraints (e.g., unique email across shards) |
+
+---
+
+### 🧠 Best Practices
+
+* Choose a good **sharding key** (e.g., `user_id`, not `created_at`)
+* Use **application-level routing** logic
+* Avoid **hot shards** (where one shard has way more data or load)
+* Automate **monitoring and backups** per shard
+
+---
+
+### 🧩 Visual Diagram
+
+```text
+            ┌─────────────┐
+            │   Router    │
+            └────┬────────┘
+                 │
+      ┌──────────┴──────────┐
+      ▼                     ▼
+ ┌─────────┐          ┌─────────┐
+ │ Shard 1 │          │ Shard 2 │
+ │ user_id 1–1M       │ user_id 1M–2M
+ └─────────┘          └─────────┘
+```
+
+---
+
+### 💡 When to Shard?
+
+* You’re hitting **storage or query limits** on a single server
+* Data is **too large** for a single machine to handle efficiently
+* You want to **scale writes** and not just reads (caching helps only for reads)
+
+---
+
+Would you like this in **PDF format**, or should I include a **real-world Rails/Postgres example** of implementing sharding?

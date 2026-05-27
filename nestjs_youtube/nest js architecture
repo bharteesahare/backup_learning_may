@@ -1,0 +1,52 @@
+client server architectures
+-> clinet send request
+-> server rend the response to client
+
+controller 
+handler 
+
+/users -> request handler(/profile)
+
+
+service business logic
+
+
+
+
+application context (module -> controller + service )
+
+
+Imp scopes
+global
+module
+controller
+request handler/route
+
+
+Global scope:
+middlerware -> only request time modify any request -> before the controller get the request middler ware call
+guard -> authentication -> request fullfil
+interceptor -> response time + request time both time work
+pipe -> transform the request/ validation into the 
+
+
+Based on the scope this 4 we can add any, like module
+
+Exception filter -> application context -> own handle
+
+
+
+Two module
+module with controllers
+module without controller
+
+
+application bootstraping
+main ts
+
+
+module
+global
+
+=================
+installation

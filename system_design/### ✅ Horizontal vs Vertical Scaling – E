@@ -1,0 +1,76 @@
+### ✅ Horizontal vs Vertical Scaling – Easy System Design Notes
+
+When designing scalable systems, **scaling** is a key concept. It helps your system handle more load (users, data, traffic, etc.).
+
+---
+
+### 🔁 **1. Vertical Scaling (Scaling Up)**
+
+**Definition:**
+Adding **more power (CPU, RAM, storage)** to an existing machine.
+
+**Example:**
+Upgrading your server from 16 GB RAM to 64 GB RAM.
+
+**Pros:**
+
+* Simple to implement (no app architecture change).
+* Easier to manage (single machine).
+
+**Cons:**
+
+* **Limit to how much you can upgrade** a single machine.
+* Downtime may be required to upgrade.
+* Can get **expensive quickly** for high-end hardware.
+
+---
+
+### 🧱 **2. Horizontal Scaling (Scaling Out)**
+
+**Definition:**
+Adding **more machines** (nodes/servers) to your system and distributing the load.
+
+**Example:**
+Adding 4 more servers to your web server pool behind a load balancer.
+
+**Pros:**
+
+* No limit – you can keep adding more machines.
+* **Fault-tolerant** – if one server goes down, others can serve.
+* Better for handling **large-scale traffic**.
+
+**Cons:**
+
+* More complex setup (load balancing, data consistency, etc.).
+* Requires designing for **distributed architecture**.
+
+---
+
+### 📊 Summary Table:
+
+| Feature     | Vertical Scaling        | Horizontal Scaling          |
+| ----------- | ----------------------- | --------------------------- |
+| Adds        | More power to 1 machine | More machines               |
+| Limitations | Hardware limits         | Can scale almost infinitely |
+| Complexity  | Simple                  | More complex (distributed)  |
+| Downtime    | May be needed           | Often no downtime           |
+| Example     | Upgrade CPU/RAM         | Add more servers            |
+
+---
+
+### 🚀 When to Use What?
+
+* Use **Vertical Scaling** if:
+
+  * Your traffic is low to medium.
+  * You want a simple setup.
+  * You're using monolithic architecture.
+
+* Use **Horizontal Scaling** if:
+
+  * You need to handle **large traffic** or **global users**.
+  * You're building **distributed systems** or using microservices.
+
+---
+
+Let me know if you want this as a PDF or a visual diagram.

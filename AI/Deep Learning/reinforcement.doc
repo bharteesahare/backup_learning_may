@@ -1,0 +1,41 @@
+maze => enviornments
+
+Agent > artificial intelligence
+
+example : the cook the omelet
+
+steps: 1. get the eggs,
+2. get the salt.
+3. get the pan.
+4. put the eggs in the pan.
+5. put the salt on the eggs.
+6. cook the eggs.
+
+example: driving the car
+1. car speed.
+stock market
+
+
+Reinforcement: reward or punishment.
+simplest way to think of reignforcement learning like training the dog.
+when you train the dog, you give it certain commands. and if it obey those command, they you give it treat.
+
+states => commands
+reward is like giving 1 or -1 points
+
+
+We are think about the robot dog.
+=> algorithm.
+
+preprogram agent and reignforcement learning agent.
+
+Preprogram agaent => robot dog
+algorithm behind the dog.
+walking => left, right, forward, backward
+
+
+experiment experiment => learning process, => how it works => algorithm.
+optimize the thing own. => in this normal dog can be trained.
+
+
+Most IMP link=> https://awjuliani.medium.com/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0

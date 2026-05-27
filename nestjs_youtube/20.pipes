@@ -1,0 +1,91 @@
+Built-in Pipes – NestJS (Notes)
+
+1. What is a Pipe in NestJS?
+A pipe is used to transform and validate data
+Pipes run before the controller method
+Commonly used for:
+Input validation
+Type conversion
+
+2. Why use Pipes?
+Ensures clean and valid data
+Reduces manual validation code
+Improves application reliability
+
+3. Built-in Pipes in NestJS
+NestJS provides several built-in pipes:
+
+4. Common Built-in Pipes
+1. ValidationPipe
+Validates request data using class-validator
+Transforms input types
+app.useGlobalPipes(new ValidationPipe());
+
+@Body() createUserDto: CreateUserDto
+
+
+2. ParseIntPipe
+Converts string to number
+Throws error if conversion fails
+@Get(':id')
+getUser(@Param('id', ParseIntPipe) id: number) {}
+
+
+3. ParseFloatPipe
+Converts string to float
+@Param('price', ParseFloatPipe) price: number
+
+
+4. ParseBoolPipe
+Converts string to boolean
+@Query('active', ParseBoolPipe) active: boolean
+
+
+5. ParseArrayPipe
+Converts input into an array
+@Query('ids', new ParseArrayPipe({ items: Number }))
+ids: number[]
+
+
+6. ParseUUIDPipe
+Validates UUID format
+@Param('id', ParseUUIDPipe) id: string
+
+
+7. DefaultValuePipe
+Sets default value if input is undefined
+@Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number
+
+
+5. Where Pipes Can Be Applied
+Level
+Example
+
+Global
+app.useGlobalPipes()
+
+Controller
+@UsePipes()
+
+Route
+@Param(), @Body()
+
+
+6. Pipe Execution Flow
+Request → Pipe → Controller → Service
+
+
+7. Key Points (Exam Ready)
+Pipes transform & validate data
+Run before controller logic
+Built-in pipes reduce boilerplate
+Can be global, controller, or method-level
+
+8. One-Line Definition
+Built-in pipes in NestJS are used to automatically transform and validate incoming request data before it reaches the controller.
+
+If you want, I can also provide:
+Custom pipe notes
+ValidationPipe with DTO example
+Short exam Q&A
+

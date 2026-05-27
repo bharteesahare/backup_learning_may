@@ -1,0 +1,41 @@
+Introduction and Welcome!
+Course Prerequisites & Software
+How to Get the Most Out of the Course
+Why NestJS? A Better, More Structured Way to Build APIs
+Project Setup: Your First NestJS Application
+The Magic of Nest: Understanding Dependency Injection & IoC
+It's Alive! Running the App & Making Your First API Request
+Deep Dive: @Injectable() Providers - The Building Blocks of Your App
+Section Review: Core NestJS Concepts
+Practice: Building Your First Service with DI
+Solution Review: A Look at Professional Code Structure
+The Blueprint: Designing Our Task Management API
+A Quick Refresher: Core REST API Concepts
+API Architecture: The Power of NestJS Modules
+Creating Your First Module
+Controllers: Your API's Front Door for Incoming Requests
+Your First Endpoint: Handling GET Requests
+Working with Dynamic Data in URLs (Route Parameters)
+Services: Where Your Business Logic Lives
+Data Transfer Objects (DTOs): Structuring Your API Data
+Implementing the Logic: Fetching Data in a Service
+Error Handling Like a Pro: Handling 404s and Other 
+Creating Resources: Handling POST Requests
+Pro Tools: Using Postman & VSCode for Efficient Testing
+Bulletproof Validation: Setting Up Automatic Data Validation with Pipes
+Testing Your API's Validation Logic
+Validating and Transforming Data from the URL
+Updating Resources: Implementing PATCH Requests
+Stateful Operations: Deleting Resources
+Industry Deep Dive: The Difference Between PUT vs. PATCH
+Advanced TypeScript: Mastering Mapped Types for Smarter DTOs
+Implementing a Complete PATCH Update Flow
+Advanced Request Testing: Chaining Requests for Complex Scenarios
+Beyond Code: Understanding Domain vs. HTTP Errors
+14:24
+Turning Business Logic Errors into Clean HTTP Responses
+
+
+
+
+

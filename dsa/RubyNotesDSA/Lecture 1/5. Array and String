@@ -1,0 +1,51 @@
+String: 
+A string is a sequence of charcter liks "hello", "123", "ruby on rails"
+String is immutable in Ruby, meaning that once a string is created, it cannot be changed.
+But using the operation we can change the string as a mutable.
+
+name = "Alice"
+puts name.length
+puts name.upcase
+puts name[0]
+puts name[0,3]
+
+
+Common String Method:
+str = "Ruby"
+str.reverse
+str.include?("u")
+str.gsub("u". "o")
+
+Array:
+an array is an ordered collection of elements.
+Can contain different data types like string, integer etc.
+
+Example:
+fruits = ["apple", "banana", "cherry"]
+puts fruits[0]
+puts fruits[1]
+puts fruits.length
+
+Commor Array Methods:
+arr = [1,2,3]
+arr.push(4)
+arr.pop
+arr.include?(2)
+arr.reverse
+
+Practice Problem:
+Takes 3 names as input and stores them in an array.
+puts "enter the 1st elememnt"
+a = gets.chomp.to_i
+puts "enter the 2nd element"
+b = gets.chomp.to_i
+puts "enter the 3rd element"
+c =  gets.chomp.to_i
+
+result = Array.new()
+result.push(a)
+result.push(b)
+result.push(c)
+
+result.reverse
+result.upcase

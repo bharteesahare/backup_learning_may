@@ -1,0 +1,21 @@
+Frontier Model:
+first llm solution using Frontier model.
+
+
+setup env:
+1. clone the repo, install cursor.open the project
+2. uv ide -> anaconda manage python enviornmnet -> easy and fast
+3. open api key create an open api key
+4. create the .env file
+5. start week day 1
+
+
+troubleshoude notebook
+chatgpt
+claude
+
+
+cursor.com -> download.
+vs code
+
+open project folder.

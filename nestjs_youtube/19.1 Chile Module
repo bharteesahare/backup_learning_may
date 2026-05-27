@@ -1,0 +1,144 @@
+Nested Child Routes – NestJS (Notes)
+
+1. What are Nested Child Routes?
+Nested child routes allow one module to be routed inside another module
+Used to create hierarchical URLs
+Managed using RouterModule with children
+
+2. Why use Nested Routes?
+Better URL structure
+Clear module hierarchy
+Ideal for large applications
+
+3. Basic Structure
+const routes: Routes = [
+  {
+    path: 'parent',
+    module: ParentModule,
+    children: [
+      {
+        path: 'child',
+        module: ChildModule,
+      },
+    ],
+  },
+];
+
+
+4. Step-by-Step Example
+
+Step 1: Create Modules
+Admin Module (Parent)
+// admin.module.ts
+@Module({
+  controllers: [AdminController],
+})
+export class AdminModule {}
+
+// admin.controller.ts
+@Controller()
+export class AdminController {
+  @Get('dashboard')
+  dashboard() {
+    return 'Admin Dashboard';
+  }
+}
+
+
+User Module (Child)
+// user.module.ts
+@Module({
+  controllers: [UserController],
+})
+export class UserModule {}
+
+// user.controller.ts
+@Controller()
+export class UserController {
+  @Get('list')
+  listUsers() {
+    return 'User List';
+  }
+}
+
+
+Step 2: Define Nested Routes
+// routes.ts
+import { Routes } from '@nestjs/core';
+
+export const routes: Routes = [
+  {
+    path: 'admin',
+    module: AdminModule,
+    children: [
+      {
+        path: 'users',
+        module: UserModule,
+      },
+    ],
+  },
+];
+
+
+Step 3: Register Routes in AppModule
+// app.module.ts
+@Module({
+  imports: [
+    AdminModule,
+    UserModule,
+    RouterModule.register(routes),
+  ],
+})
+export class AppModule {}
+
+
+5. Final Route URLs
+URL
+Controller
+/admin/dashboard
+AdminController
+/admin/users/list
+UserController
+
+
+6. Important Notes
+Controllers use @Controller() without prefix
+Route prefixes come from RouterModule
+Nesting can be multi-level
+
+7. Multi-Level Nesting Example
+/admin
+  └── users
+       └── roles
+
+children: [
+  {
+    path: 'users',
+    module: UserModule,
+    children: [
+      {
+        path: 'roles',
+        module: RoleModule,
+      },
+    ],
+  },
+];
+
+Final URL:
+/admin/users/roles
+
+
+8. Key Points (Exam Ready)
+Nested routes use children property
+Supports deep routing hierarchy
+Improves modular design
+Centralized routing configuration
+
+9. One-Line Definition
+Nested child routes in NestJS allow modules to be routed inside other modules using RouterModule children for hierarchical URLs.
+
+If you want:
+Diagram-based explanation
+Short exam answers
+Real project folder structure
+

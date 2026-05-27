@@ -1,0 +1,29 @@
+npm -i g @nestjs/cli -> globally install
+
+nest new <project_name>
+
+boiler plate
+
+dist -> distributoon
+coverage -> testing jstest
+
+main.ts -> application start
+app module -> base module
+
+
+
+start -> npm start
+curl http://localhost:3000
+
+//watch mode -> automatically complile
+npm run start:dev 
+
+npm run test
+
+npm run test:ete
+
+npm run build -> dist folder build the folder
+
+//if we want to install used the fastify
+
+

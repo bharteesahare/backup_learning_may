@@ -1,0 +1,60 @@
+# variable
+variables are used to store, process, and manipulate data. So, let's say you wanted to store 28 in the variable age, this is what you would do:
+age = 28
+print(age)
+age = 5
+print(age)
+
+## Variables store numbers, strings and other type of data
+name = "Otto"
+gnom_height = 12.7
+
+You can use variables within f-strings to make your output more readable. For example, you can print the value assigned to age along with the string "Age: " so that anyone reading the display will understand what the value represents.
+print(f"bhartee sahare height is {gnom_height}")
+
+## Variables help you store values that constantly change
+Take a game where the score starts at zero. In the next cell, you create a variable score, assign it the value of 0, and display the current score.
+x = 0
+print(x)
+x = x + 10
+print(x) => it return the output as a 10
+
+## Variable names restrictions
+my score = 60
+  File "<stdin>", line 1
+    my score = 60
+       ^^^^^
+SyntaxError: invalid syntax
+>>> 
+Python reads this as two separate things (my and score) and gets confused →
+
+It works:
+my_score = 450
+myScore = 450
+myscore = 450
+
+Variable names cannot contain spaces, but they can contain:
+
+letters
+numbers (not at the start)
+underscores _
+
+## Variables allow you to code efficiently!
+
+Exercise:
+# Create a variable called 'my_name' and assign it the value of your name as a string.
+# Then print out a greeting using the variable, like "Hello, Andrew!"
+my_name = 
+print()
+
+my_name = "bhartee"
+>>> print("Hello {my_name}") # this is not work
+Hello {my_name}
+>>> print(f"Hello {my_name}")
+Hello bhartee
+>>> 
+
+# Enter your favorite number below and store it in a variable called 'fav_num'. 
+# Print out a message telling you what your favorite number plus 10 is.
+fav_num = 
+print(f"Your favorite number plus 10 is {}")

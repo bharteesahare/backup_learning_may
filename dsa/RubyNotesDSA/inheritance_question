@@ -1,0 +1,87 @@
+Here’s a list of **interview questions** focused on **Inheritance in Ruby/Rails**, along with key **Object-Oriented Programming (OOP)** concepts commonly asked in Ruby on Rails interviews:
+
+---
+
+## 🎯 **Ruby/Rails Inheritance & OOP Interview Questions**
+
+### ✅ **Basic Ruby OOP & Inheritance Concepts**
+
+1. **What is inheritance in Ruby?**
+
+   * *Follow-up:* How is it implemented?
+
+2. **How do you create a class that inherits from another in Ruby?**
+
+3. **What is the difference between class inheritance and module mixins in Ruby?**
+
+4. **What is the difference between `include`, `extend`, and `prepend` in Ruby?**
+
+   * *Follow-up:* When would you use each?
+
+5. **Can Ruby support multiple inheritance? Why or why not?**
+
+6. **What is method overriding in Ruby?**
+
+   * *Example:* What happens if both parent and child classes have the same method name?
+
+7. **How can you call the parent class method from the child class in Ruby?**
+
+   * (`super` keyword)
+
+8. **What are the access modifiers in Ruby (`public`, `private`, `protected`)?**
+
+   * *Follow-up:* How do they affect inheritance?
+
+---
+
+### ✅ **Rails-Specific Inheritance & OOP**
+
+9. **What is Single Table Inheritance (STI) in Rails?**
+
+   * *Follow-up:* How does Rails implement STI?
+   * *Follow-up:* What column is used to distinguish child classes?
+
+10. **When would you use STI in a real-world Rails app?**
+
+11. **What are the disadvantages or limitations of STI?**
+
+12. **What is `self.inherited` in Ruby? Have you ever used it in Rails?**
+
+13. **What is `concern` in Rails and how is it different from inheritance?**
+
+* *Follow-up:* Why would you use a concern instead of subclassing?
+
+14. **What’s the difference between inheritance and composition in Rails models or controllers?**
+
+---
+
+### ✅ **Real-World Scenarios & Best Practices**
+
+15. **Have you ever refactored code to use inheritance in a Rails app? Why?**
+
+16. **What are some anti-patterns in overusing inheritance?**
+
+17. **Can you explain the "Has-A" vs "Is-A" relationship? How does it apply in Rails?**
+
+18. **What is polymorphism in Ruby/Rails?**
+
+* *Follow-up:* How does Rails implement polymorphic associations?
+
+19. **How do decorators or presenters relate to inheritance and OOP principles in Rails?**
+
+20. **Have you used Service Objects or Form Objects in Rails? Are they related to OOP?**
+
+---
+
+## 🛠️ Bonus Tip:
+
+Prepare small **code examples** for:
+
+* `super` usage
+* STI example
+* `include vs extend`
+* Polymorphic model setup
+
+---
+
+Would you like answers or sample code for any of these? I can also prepare a printable PDF or Notion sheet if you’re using it for prep.

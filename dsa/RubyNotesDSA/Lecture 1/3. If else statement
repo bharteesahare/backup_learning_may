@@ -1,0 +1,68 @@
+If-Else Statements in Ruby
+
+Basic Syantx:
+if condition
+elsif condition
+elsif condition
+else
+end
+
+
+age = 18
+if age >= 18
+puts "You are an adult"
+else
+puts "You are a minor"
+end
+
+marks = 67
+
+If marks are less than 25, it prints "Grade: F."
+If marks are between 25 and 44 (inclusive), it prints "Grade: E."
+If marks are between 45 and 49 (inclusive), it prints "Grade: D."
+If marks are between 50 and 59 (inclusive), it prints "Grade: C."
+If marks are between 60 and 69 (inclusive), it prints "Grade: B."
+If marks are 70 or higher, it prints "Grade: A."
+If marks are outside the valid range, it prints "Invalid marks entered."
+
+marks = 25
+if marks <= 25
+	puts "Grade: F."
+elsif marks >= 25 && marks <= 44
+	puts "Grade: E."
+elsif marks >= 45 && marks <= 49 
+	puts "Grade: D."
+elsif marks >= 50 && marks <= 59
+	puts "Grade: C."
+elsif marks >= 60 && marks <= 69
+	puts "Grade: B."
+elsif marks >= 70
+	puts "Grade: A."
+else 
+	puts "Invalid marks entered."
+end
+
+
+Problem:
+Write a Ruby program that takes a user's age as input and prints:
+"Too young to vote" if age is less than 18
+"Eligible to vote" if age is between 18 and 60 (inclusive)
+"Senior citizen voter" if age is above 60
+
+puts "Enter the age"
+age = gets.chomp.to_i
+if age < 18 
+    puts "Too young to vote"
+elsif age >= 18 && age <= 60
+    puts "Eligible to vote"
+else
+    puts "Senior citizen voter"
+end
+
+
+Notes: Most IMP: 
+Truthy and Falsy in Ruby
+Only false and nil are falsy
+
+Everything else is truthy (including 0, "", [], {})
+

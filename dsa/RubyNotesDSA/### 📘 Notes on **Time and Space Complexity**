@@ -1,0 +1,134 @@
+### 📘 Notes on **Time and Space Complexity**
+
+Time and space complexity help analyze the performance of algorithms in terms of **execution time** and **memory usage**.
+
+---
+
+## 🕒 **Time Complexity**
+
+**Definition**: Measures how the runtime of an algorithm increases with input size `n`.
+
+### 1. **Big O Notation (O)**:
+
+Represents the **upper bound** or worst-case scenario.
+
+| Common Complexities | Example Algorithm                 |
+| ------------------- | --------------------------------- |
+| O(1)                | Accessing an array element        |
+| O(log n)            | Binary Search                     |
+| O(n)                | Linear Search                     |
+| O(n log n)          | Merge Sort, Quick Sort (avg case) |
+| O(n²)               | Bubble Sort, Selection Sort       |
+| O(2ⁿ)               | Recursive Fibonacci               |
+| O(n!)               | Brute Force on permutations       |
+
+### 2. **How to Calculate Time Complexity**:
+
+* Count the **number of operations** as a function of input size `n`.
+* Discard constants and lower-order terms.
+
+#### ✨ Examples:
+
+```ruby
+# O(n)
+def print_items(arr)
+  arr.each do |item|
+    puts item
+  end
+end
+```
+
+```ruby
+# O(n²)
+def print_pairs(arr)
+  arr.each do |i|
+    arr.each do |j|
+      puts "#{i}, #{j}"
+    end
+  end
+end
+```
+
+### 3. **Loop Rules**:
+
+* **Sequential Loops** → Add complexities: O(n) + O(n) = O(n)
+* **Nested Loops** → Multiply complexities: O(n) × O(n) = O(n²)
+
+---
+
+## 🧠 **Space Complexity**
+
+**Definition**: Measures the amount of **extra memory** used by the algorithm.
+
+### 1. **Includes**:
+
+* Input storage (if duplicated or modified)
+* Variable storage
+* Recursion stack (for recursive functions)
+* Data structures like arrays, hash maps
+
+### 2. **How to Calculate Space Complexity**:
+
+Count how much **extra memory** is used **relative to input size `n`**.
+
+#### ✨ Examples:
+
+```ruby
+# O(1) space
+def sum(arr)
+  total = 0
+  arr.each { |x| total += x }
+  total
+end
+```
+
+```ruby
+# O(n) space – result array grows with input
+def double(arr)
+  result = []
+  arr.each { |x| result << 2 * x }
+  result
+end
+```
+
+---
+
+## 🔁 Recursive Functions
+
+For recursion:
+
+* **Time Complexity** = Number of calls × Time per call
+* **Space Complexity** = Depth of recursion (call stack)
+
+```ruby
+# Fibonacci (naive)
+def fib(n)
+  return n if n <= 1
+  fib(n - 1) + fib(n - 2)
+end
+# Time: O(2^n), Space: O(n)
+```
+
+---
+
+## 🧩 Final Tips
+
+* Focus on **worst-case** unless otherwise mentioned.
+* Drop constants: O(3n + 5) → O(n)
+* Nested loops = multiply; sequential = add
+* Always consider recursion stack in space complexity
+
+Would you like these notes exported to the Excel file too?
+
+
+SELECT id, host, time, state from information_schema.processlist WHERE time > 30;
+mysql -u shipxDBA -p -h10.70.40.30
+SHOW FULL PROCESSLIST;
+SELECT id, host, time, state  FROM information_schema.processlist WHERE time > 30;
+SELECT * FROM information_schema.processlist WHERE info LIKE '%UPDATE `numeric_ranges`%' AND time > 30;
+
+
+Lr.events.where(
+  event_type: Event::CONFIRMED,
+  occurred_at: 3.hours.ago..Time.current
+)

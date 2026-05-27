@@ -1,0 +1,162 @@
+Here are **clean, structured notes** based on your code, suitable for **revision or interview prep** 👇
+
+---
+
+## 📝 JavaScript Sync & Async Notes
+
+---
+
+## 1️⃣ Synchronous Code
+
+* **Synchronous (sync)** code executes **line by line**
+* Each statement waits for the previous one to finish
+
+### Example
+
+```js
+console.log('Hello'); // runs first
+console.log('hi');    // runs second
+```
+
+### Output
+
+```
+Hello
+hi
+```
+
+✔ Sync code always executes **before async callbacks**, even if async is written earlier.
+
+---
+
+## 2️⃣ Asynchronous Code
+
+* **Asynchronous (async)** code runs **in the background**
+* Does **not block** the main execution
+* Examples:
+
+  * `setTimeout`
+  * Promises
+  * API calls
+
+### Example
+
+```js
+setTimeout(() => {
+  console.log('Timer is done');
+}, 2000);
+```
+
+✔ The callback runs **after 2 seconds**, once the call stack is free.
+
+---
+
+## 3️⃣ Promise Basics
+
+* `Promise` is a **constructor function**
+* It takes a function with **two parameters**:
+
+  * `resolve` → called when operation succeeds
+  * `reject` → called when operation fails (error)
+
+### Promise States
+
+* **Pending** – initial state
+* **Fulfilled** – operation successful
+* **Rejected** – operation failed
+
+---
+
+## 4️⃣ Creating a Promise
+
+```js
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Done');
+    }, 1500);
+  });
+};
+```
+
+✔ `resolve()` completes the promise successfully
+✔ Returned promise can be chained using `.then()`
+
+---
+
+## 5️⃣ Promise Chaining
+
+* `.then()` returns a **new promise**
+* Allows **sequential async operations**
+
+### Example
+
+```js
+fetchData()
+  .then(text => {
+    console.log(text);
+    return fetchData();
+  })
+  .then(text2 => {
+    console.log(text2);
+  });
+```
+
+### Output
+
+```
+Done
+Done
+```
+
+✔ Second `fetchData()` runs **after** the first completes
+
+---
+
+## 6️⃣ Combined Sync + Async Execution Flow
+
+```js
+console.log('Hello');
+console.log('hi');
+
+setTimeout(() => {
+  console.log('Timer is done');
+}, 2000);
+```
+
+### Execution Order
+
+1. `Hello`
+2. `hi`
+3. `Timer is done` (after 2 seconds)
+
+✔ Sync code executes **first**
+✔ Async code executes **later via Event Loop**
+
+---
+
+## 7️⃣ Event Loop (Key Concept)
+
+* Handles async operations
+* Moves completed async callbacks to the **call stack**
+* Ensures non-blocking behavior
+
+---
+
+## ✅ Key Takeaways
+
+* Sync code blocks execution
+* Async code runs in background
+* Promises manage async logic
+* `.then()` enables chaining
+* Event Loop controls execution order
+
+---
+
+If you want, I can also:
+
+* Convert this into **interview Q&A**
+* Rewrite using **async/await**
+* Add **execution timeline diagram**
+
+Just tell me 👍

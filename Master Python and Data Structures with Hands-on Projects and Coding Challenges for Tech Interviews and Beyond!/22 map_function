@@ -1,0 +1,52 @@
+map:
+map is a function applies a given function to all items in an inputr list and retrn a map objec. this is partcularly useful for tranfprming data in a list comprensively.
+
+def square(x):
+    return x*x
+
+square(10)
+
+
+numbers = [1,2,3,4,5] -> applies the square to each number
+two parameter
+1. function
+2. iterator
+
+lits[map(square, numbers)]
+
+
+lambda function with map:
+
+number = [1,2,3,4,5]
+list(map(lambda x: x*x,numbers))
+
+
+map multiple iteratable
+
+number1=[1,2,3]
+number2=[4,5,6]
+
+added_numbers=list(map(lambda x,y: x+y, number1, number2))
+print(added_numbers)
+
+# map to coonvert a list of string to integrfe
+
+str_numbers = ['1', '2','3','4', '5']
+int_numbers = list(map(int,str_numbers))
+print(int_numbers)
+
+
+words=['apple','banana','cherry']
+upper_word = list(map(str.upper,workds))
+print(upper_word)
+
+
+def get_name(person):
+    return person['name']
+
+
+people=[
+    {'name': 'bhartee'}
+]
+
+list(map(get_name,people))

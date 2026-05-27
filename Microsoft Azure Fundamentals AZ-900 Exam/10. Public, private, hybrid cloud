@@ -1,0 +1,106 @@
+Here are **clean, structured, AZ-900-ready notes** on **Public, Private, and Hybrid Cloud** based on all the details you provided.
+
+---
+
+# ☁️ **Public, Private & Hybrid Cloud – Notes**
+
+## **1. Public Cloud**
+
+The most common cloud model (≈90% of Azure accounts).
+
+### **Definition**
+
+> *Computing services offered by third-party providers over the public internet, available to anyone who wants to use or purchase them.*
+
+### **Key Points**
+
+* Azure owns:
+
+  * Hardware
+  * Networking
+  * Physical infrastructure
+* Customer only needs an **Azure account** to access services.
+* Services scale massively and are available globally.
+
+### **Examples**
+
+* Microsoft Azure (global services)
+* AWS
+* Google Cloud
+
+---
+
+## **2. Private Cloud**
+
+Dedicated cloud environment for **one organization only**.
+
+### **Definition**
+
+> *Computing services offered either over the internet or a private internal network, and only to selected users—not to the general public.*
+
+### **Key Points**
+
+* Access is **restricted** to specific:
+
+  * Users
+  * Groups
+  * Departments
+* Looks and behaves like a cloud (scalable, automated), but:
+
+  * Customer **owns**, **leases**, or has **exclusive use** of the hardware.
+* Microsoft provides private cloud technology:
+
+  * **Azure Local (formerly Azure Stack HCI)** → **important for the exam**
+
+### **Use Cases**
+
+* Highly sensitive workloads
+* Government or regulated industries
+* Organizations needing complete control
+
+---
+
+## **3. Hybrid Cloud**
+
+Combination of **public + private** cloud environments.
+
+### **Definition**
+
+> *A computing environment that combines a private cloud with a public cloud, allowing data and applications to move between them.*
+
+### **Key Points**
+
+* Sensitive workloads can run in private cloud.
+* Scalable, non-sensitive workloads use public cloud.
+* Provides elasticity while maintaining control.
+* Allows “cloud bursting” — scaling private to public.
+
+### **Use Cases**
+
+* Gradual cloud migration
+* Compliance + flexibility
+* Disaster recovery (DR) scenarios
+
+---
+
+# 🔄 **Comparison: Public vs Private vs Hybrid Cloud**
+
+| Feature         | Public Cloud                    | Private Cloud                 | Hybrid Cloud          |
+| --------------- | ------------------------------- | ----------------------------- | --------------------- |
+| **Cost**        | OPEX (pay-as-you-go)            | CAPEX (buy hardware)          | Blend of OPEX + CAPEX |
+| **Ownership**   | Azure/Provider                  | Customer                      | Shared (both)         |
+| **Access**      | General public                  | Restricted users/groups       | Mixed access          |
+| **Scalability** | Massive, elastic                | Limited by hardware           | Flexible, scalable    |
+| **Core Values** | Speed, cost savings, efficiency | Control, security, compliance | Flexibility + control |
+
+---
+
+# ⭐ **Quick Summary (Exam Tips)**
+
+* **Public Cloud** → Azure owns everything; you only use the services.
+* **Private Cloud** → Exclusive to one organization; Azure Local (Azure Stack HCI).
+* **Hybrid Cloud** → Best of both worlds; move workloads where needed.
+* Public = **OPEX**, Private = **CAPEX**, Hybrid = **Both**.
+* Public cloud gives **scalability + efficiency**, private cloud gives **control + compliance**, hybrid gives **flexibility**.
+
+

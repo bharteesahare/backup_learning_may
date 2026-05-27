@@ -1,0 +1,5 @@
+user -> query -> llm(large language model) -> output
+
+llm -> neural n/w transform traing data, Embedding-> used case specific data set.
+
+query -> prompt engineering

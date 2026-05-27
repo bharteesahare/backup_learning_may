@@ -1,0 +1,79 @@
+create the config/open_api_key.yml -> add the key here
+create the new file initalizers/open_api_key.rb -> load the yml credentials
+begin
+  OPEN_API_INTEGRATION_PARAMS = YAML.load_file('config/open_api_key.yml')
+rescue 
+  Rails.logger.info("########## Unable to load sso config")
+  OPEN_API_INTEGRATION_PARAMS = Hash.new { |h, k| h[k] = {} }
+end
+
+create the new file folder app/integration/open_api_integration.rb
+
+require 'json'
+require 'net/http'
+require 'uri'
+class OpenApiIntegration
+    def initialize(token)
+
+
+
+Now we can call this integration in the controller
+
+using this way i want the code structure
+
+https://ai.google.dev/gemini-api/docs/quickstart
+
+require 'net/http'
+require 'uri'
+require 'json'
+
+# SET YOUR KEY HERE
+api_key = "AIzaSyB0N3Xm5JTjUtUVTcIr7uDOjq2W-oyo1iQ"
+
+# Use the exact model path for the current v1beta API
+url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=#{api_key}"
+uri = URI.parse("https://generativelanguage.googleapis.com/v1beta/models/chat-bison-001:generateMessage?key=#{api_key}")
+uri = URI.parse("https://generativelanguage.googleapis.com/v1beta/models/chat-bison-001:generateMessage?key=#{api_key}")
+
+uri = URI.parse(url)
+
+# The "System Instruction" can be passed separately in Gemini 1.5
+body = {
+  system_instruction: {
+    parts: { text: "You are a logistics assistant. If the user asks anything unrelated to logistics, reply: 'I am a logistics assistant. Please ask logistics related questions only.'" }
+  },
+  contents: [
+    {
+      role: "user",
+      parts: [{ text: "How do I do Trip creation?" }]
+    }
+  ]
+}
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+request = Net::HTTP::Post.new(uri.request_uri, { 'Content-Type' => 'application/json' })
+request.body = body.to_json
+
+response = http.request(request)
+
+puts "Status: #{response.code}"
+puts "Response Body: #{JSON.parse(response.body)}"
+
+
+uri = URI("https://api.openai.com/v1/chat/completions")
+req = Net::HTTP::Post.new(uri)
+req["Authorization"] = "Bearer AIzaSyB0N3Xm5JTjUtUVTcIr7uDOjq2W-oyo1iQ"
+req["Content-Type"] = "application/json"
+req.body = {
+  model: "gpt-4o-mini",
+  messages: [
+    { role: "user", content: "Hello from Ruby 2.4!" }
+  ]
+}.to_json
+
+res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+  http.request(req)
+end
+
+puts JSON.parse(res.body)

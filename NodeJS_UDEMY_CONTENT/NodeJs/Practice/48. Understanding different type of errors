@@ -1,0 +1,45 @@
+Type of errors:
+
+synatx error:
+curly braces missing.
+
+runtime error: 
+when it break when we run
+
+logical error:
+not showing the error message.
+
+
+# Finding the synatx error
+
+
+# syantax error example:
+cons server = http.createserver(routes.handler)
+
+# missing curly.
+unexpected token
+we can find easily
+
+
+# dealing with errors:
+Run time error:
+
+# run time error 
+
+like res.end you miss it sowes the line.
+
+# logical error:
+start debugging.
+
+debugger
+
+select app.js
+debug -> debuging mode node js
+attached the debuging.
+red dot  breakpoint 
+marked this line in this.
+the code execuation error stoped
+
+
+view -> debug also we can used debug.
+debugger.

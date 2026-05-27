@@ -1,0 +1,209 @@
+module UserModule
+    def full_name
+    end
+end
+
+
+
+class User
+    # include UserModule
+    prepend UserModule
+    
+    def full_name
+    end
+
+
+
+    def get_full_name
+        full_name
+    end
+end  
+
+
+
+
+
+u = User.new
+u.full_name
+
+
+
+
+
+class User
+    first_name
+    last_name
+    
+    def get_age
+    end
+end
+
+
+
+class UserDecorator < SimpleDelegator
+    def initialize(user)
+        super(user)
+    end
+    
+    def get_full_name
+        first_name+last_name
+    end
+end
+
+
+
+u = User.find 1 
+u = UserDecorator.new(u)
+
+
+
+u.get_full_name
+u.get_age
+
+
+
+
+
+what is yield
+around -> yield first yield
+
+
+
+save and save! -> validations
+
+
+
+delete and destroy  -> before_destroy, around_destroy, after_commit and after_rollback
+
+
+
+class_eval -> 
+put/patch 
+N+1 -> rails  by joins 
+for  u
+    for product
+include -> left out er join or separate
+u = query
+preload -> which is not uses
+
+
+
+devise, roo, rmagick, delay gem, bycrypt,  all gems used
+find, each, find_each
+jwt, csrf 
+u = User.all -> time out issue -> how you will resolve
+benchmark
+action pack
+web hooks
+yield meaning
+cherry pick git hub
+git fetch/pull
+how you will remove binding.pry in running code
+can we use sidekiq/resque without redis and how it is diff from delay job
+transaction block
+filters
+Callbacks
+background processing job
+react 
+what is the challenging part 
+what is weakness part 
+joins and include
+
+
+
+ps = "hi my name piyush name piyush name hi hi"
+s = ps.split(" ")
+hp = Hash.new(0)
+s.each{|p| hp[p] += 1}
+
+hp
+=> {"hi"=>3, "my"=>1, "name"=>3, "piyush"=>2}
+
+
+
+
+mx = 0
+key = ""
+val = 0
+hp.each do |k,v|
+  if val < v
+ &nbsp;&nbsp; key = k
+ &nbsp;&nbsp; val = v
+  end
+end
+----
+student
+id, name, marks
+name -> 2nd max marks
+
+
+
+Select * from Student where marks <> (select MAX(marks) from Student);
+
+
+
+@user update, show, delete
+
+
+
+-----------------------------------------------------
+
+1. Sidekiq
+2. Twilio
+3. Callbacks
+4. Rails engine
+5. Authentication
+6. Validations
+7. Exception handling
+8. Use rails as api
+9. Faraday
+10. Cors
+11. React
+12. Components
+13. Jsx
+14. Props
+15. State
+16. Hooks - usestate
+17. Key in react
+
+
+1. Ruby 2.5.8 vs 3.0.2
+2. Rails 6 vs 7
+3. Predefined method of array
+4. Remove duplicate methods from array
+5. A = [1,2,3,4];&nbsp;&nbsp;&nbsp; b=a.uniq!;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Puts a==b;&nbsp; true/false/error - false because uniq! Will return nil as all elements are uniq
+6. Uniq vs uniq!
+7. Save and save!
+8. Gems
+9. Gemfile vs gemfile.lock
+10. Transaction block
+11. If inside a transaction block a user is created along with user profile, user is created and error occurred while creating user profile. Will callback after creating user will run or not. - yes, it will run but is not a good approach.
+12. After commit can resolve the above issue
+13. Input = “a@b-c@d-e@f”; output = [[‘a’,’b’][‘c’,’d’]][‘e’,’f’]
+14. Active record query for second highest salalry
+15. How to connect react projects with rails
+16. Any cable
+17. Authenticate api - JWT 
+18. Get commits from other branches to our branch
+
+User.joins(:posts).select("users.name, posts.title")
+
+Predefined method of array
+
+class UsersController < ApplicationController
+  def index
+    page = params[:page] || 1
+    per_page = params[:per_page] || 10
+    offset = (page - 1) * per_page
+    users = User.offset(offset).limit(per_page)
+    render json: {
+      users: users,
+      pagination: {
+        page: page,
+        per_page: per_page,
+        total_pages: (User.count / per_page.to_f).ceil,
+        total_records: User.count
+      }
+    }
+  end
+end

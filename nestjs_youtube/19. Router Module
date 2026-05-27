@@ -1,0 +1,105 @@
+RouterModule – NestJS (Notes)
+
+1. What is RouterModule?
+RouterModule is used to organize routes using modules
+Helps create module-based routing
+Useful for large applications
+👉 It allows you to define route prefixes for modules.
+
+2. Why use RouterModule?
+Clean URL structure
+Better module separation
+Easy to manage large apps
+Improves readability and maintenance
+
+3. Importing RouterModule
+import { RouterModule } from '@nestjs/core';
+
+
+4. Basic Usage Example
+AppModule (Root Routing)
+// app.module.ts
+import { Module } from '@nestjs/common';
+import { RouterModule } from '@nestjs/core';
+import { UserModule } from './user/user.module';
+import { AdminModule } from './admin/admin.module';
+
+@Module({
+  imports: [
+    UserModule,
+    AdminModule,
+    RouterModule.register([
+      { path: 'users', module: UserModule },
+      { path: 'admin', module: AdminModule },
+    ]),
+  ],
+})
+export class AppModule {}
+
+
+5. How Routing Works
+URL
+Controller
+/users/profile
+UserController
+/admin/login
+AdminController
+
+
+path → URL prefix
+module → module handling routes
+
+6. Feature Module Example
+// user.controller.ts
+@Controller()
+export class UserController {
+  @Get('profile')
+  getProfile() {
+    return 'User Profile';
+  }
+}
+
+Final route:
+/users/profile
+
+
+7. Nested Routes (Child Routes)
+RouterModule.register([
+  {
+    path: 'admin',
+    module: AdminModule,
+    children: [
+      { path: 'users', module: UserModule },
+    ],
+  },
+]);
+
+Final route:
+/admin/users
+
+
+8. Key Points
+Works at module level
+Controllers do NOT need route prefixes
+Supports nested routing
+Best for large-scale applications
+
+9. RouterModule vs @Controller Prefix
+RouterModule
+@Controller('path')
+Module-based
+Controller-based
+Centralized routing
+Distributed routing
+Better for big apps
+Good for small apps
+
+
+10. One-Line Definition (Exam / Interview)
+RouterModule in NestJS is used to define module-based routing with URL prefixes for better application structure.
+
+If you want, I can also provide:
+Short exam answers
+Diagram-based explanation
+Difference between RouterModule and Middleware routes
+

@@ -1,0 +1,143 @@
+Good question.
+Short answer first, then **full notes** 👇
+
+---
+
+## Does Brute Force come under Backtracking and Branch & Bound?
+
+❌ **NO**
+
+**Brute Force is NOT under Backtracking or Branch and Bound.**
+
+✔ Instead:
+
+* **Backtracking** and **Branch & Bound** are **improvements (optimized versions)** of the **Brute Force approach**
+
+---
+
+## Relationship (Very Important for Exams)
+
+```
+Brute Force
+   |
+   |── Backtracking (DFS + Pruning)
+   |
+   |── Branch and Bound (BFS/DFS + Bounding)
+```
+
+So:
+
+* Brute Force → **parent/basic approach**
+* Backtracking & Branch and Bound → **derived / optimized techniques**
+
+---
+
+# FULL NOTES
+
+## 1. Brute Force Approach
+
+### Definition
+
+Brute force is a straightforward method that **generates all possible solutions** and then checks which ones satisfy the constraints.
+
+### Features
+
+* No pruning
+* No bounding
+* No intelligence
+* Tries **every possibility**
+
+### Example
+
+For 3 people:
+
+* Total solutions = **3! = 6**
+* All generated, then checked
+
+### Drawback
+
+* Very slow for large input
+* High time complexity
+
+---
+
+## 2. Backtracking
+
+### Definition
+
+Backtracking is an **optimized brute force technique** that builds the solution **step by step** and **abandons** a partial solution as soon as it violates a constraint.
+
+### Key Points
+
+* Uses **DFS**
+* Applies **constraint checking early**
+* Avoids unnecessary exploration
+
+### Why it is better than Brute Force?
+
+* Stops exploring invalid paths early
+* Saves time
+
+### Example
+
+If girl is placed in the middle:
+→ Stop immediately
+→ Backtrack
+
+---
+
+## 3. Branch and Bound
+
+### Definition
+
+Branch and Bound is also an **optimized brute force technique** that explores the state space tree using **bounding functions** to prune unpromising branches.
+
+### Key Points
+
+* Uses **BFS or DFS**
+* Uses **cost / constraint based bounding**
+* Commonly used in optimization problems
+
+### Why it is better?
+
+* Does not explore paths that cannot give optimal solution
+* Faster than brute force
+
+---
+
+## 4. Comparison Table (Exam Ready)
+
+| Feature          | Brute Force    | Backtracking          | Branch & Bound        |
+| ---------------- | -------------- | --------------------- | --------------------- |
+| Base technique   | Basic          | Optimized brute force | Optimized brute force |
+| Search style     | Exhaustive     | DFS                   | BFS / DFS             |
+| Pruning          | ❌ No           | ✔ Yes                 | ✔ Yes                 |
+| Constraint check | After solution | During construction   | Level-wise            |
+| Time complexity  | Very high      | Reduced               | More reduced          |
+| Efficiency       | Worst          | Better                | Best                  |
+| Uses bounding    | ❌ No           | Partial               | ✔ Yes                 |
+
+---
+
+## 5. Final Conclusion (Important)
+
+✔ **Brute Force is the foundation**
+✔ **Backtracking and Branch & Bound are NOT under brute force**
+✔ They are **improvements over brute force**
+✔ They reduce unnecessary work using **pruning and bounding**
+
+---
+
+## One-Line Exam Answer
+
+> **Backtracking and Branch & Bound do not come under brute force; instead, they are optimized techniques developed from the brute force approach to reduce time complexity.**
+
+---
+
+If you want, I can:
+
+* Convert this into **2-mark / 5-mark exam answers**
+* Draw a **state-space diagram**
+* Provide **pseudocode**
+
+Just say 👍

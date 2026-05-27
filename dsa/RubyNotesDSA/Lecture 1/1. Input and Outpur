@@ -1,0 +1,41 @@
+1. Getting Input from User
+In Ruby, you use gets to take input from the user.
+puts "Enter the username"
+username = gets.chomp  ## `chomp` removes the newline character
+puts "My name is #{username}"
+
+2. Input with Integer or Float Conversion
+By default, gets returns a string. Use .to_i or .to_f to convert:
+
+puts "enter the age:"
+age = gets.chomp.to_i
+
+puts "Enter your height in meters:"
+height = gets.chomp.to_f
+
+3. Multiple Inputs in One Line
+puts "Enter two numbers separated by space:"
+a,b = gets.chomp.split.map(&:to_i)
+sum = a + b
+
+4. Input Validation Example
+puts "Enter a number:"
+input = gets.chomp
+if input.match?(/^\d+$/)
+  number = input.to_i
+  puts "You entered: #{number}"
+else
+  puts "Invalid input!"
+end
+
+
+Pro Tip:
+Always use .chomp after gets to avoid unexpected newlines in your input string.
+
+ /^\d+$/ — Explanation:
+Symbol	Meaning
+/.../	Denotes the regex pattern
+^	Start of the string
+\d	Any digit (0–9)
++	One or more of the previous pattern (\d)
+$	End of the string

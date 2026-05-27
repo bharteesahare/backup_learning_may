@@ -1,0 +1,65 @@
+pip  install streamlit pypdf2 langchain faiss-cpu
+
+
+streamlit -> ui toolkit
+pypdf2 -> which aloow us to read our pdf source file
+langchain -> interface to use open ai services
+FAISS (Facebook AI Similarity Search): A library for efficient similarity search of dense vectors, often used as a local vector store. -> which is vector store to store embedding
+
+# streamlit --version
+# streamlit: command not found
+# pip install streamlit
+# streamlit run chatbot.py
+#uplod pdf file
+# in the backedn intialize the streamlite, enevaling interface, that is available to 
+# ModuleNotFoundError: No module named 'langchain_text_splitters'
+    # solution: pip install langchain_text_splitters
+
+# second break the into chunks
+# extract the text
+
+
+# break it into chunks
+# small section -> small token -> better undersstand.
+# used the lanchain
+    # rule this is rule
+1st read the pdf -> upload the pdf file.
+
+
+pip install -U langchain-community
+
+
+error:
+# ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+# Traceback:
+# File "/home/bharti/Documents/learning_target/python_ai_repo/chatbot.py", line 41, in <module>
+#     st.write(chunks)
+# solution:
+# python -m venv venv
+# source venv/bin/activate      # Linux/macOS
+# venv\Scripts\activate         # Windows
+# pip install --upgrade pip
+# pip install streamlit pypdf langchain langchain-text-splitters numpy
+
+
+# embeding # which is crucial part.
+# feeding into the embedding and store to vector.
+# gugginginterface.
+#  open ai for text understanding and text generation.
+# vectore store, vector db -> we need to store the embedding.
+# it is a database store embedding.
+
+ModuleNotFoundError: No module named 'langchain.vectorstore'
+Traceback:
+File "/home/bharti/Documents/learning_target/python_ai_repo/chatbot.py", line 5, in <module>
+    from langchain.vectorstore import FAISS
+
+
+pip install openai
+
+ImportError: Could not import tiktoken python package. This is needed in order to for OpenAIEmbeddings. Please install it with `pip install tiktoken`.
+
+
+how to activate venv in your project:
+source ./venv/bin/activate
+(venv) (base) bharti@MLLLAPH01647:~/Documents/learning_target/python_ai_repo$ 

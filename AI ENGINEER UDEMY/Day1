@@ -1,0 +1,43 @@
+LLM:
+https://github.com/ed-donner/llm_engineering
+
+ollam.com
+install ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+open source model.
+
+in the terminal if you type the ollama -> it give the set of instruction.
+
+
+ollama server -> run the server.
+ ollama serve
+Couldn't find '/home/bharti/.ollama/id_ed25519'. Generating new private key.
+Your new public key is: 
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIi+OLZHmlluAl9sfjCukv8KcH1cf/Zdl4UG9D2MjFN/
+
+Error: listen tcp 127.0.0.1:11434: bind: address already in use
+
+ollama run -> 
+
+gemma3 -> Gemma3 is Google's latest family of lightweight, open-weight AI models 
+
+size you want mention
+command
+(base) bharti@MLLLAPH01647:~/Downloads$ ollama pull gemma:2b
+
+
+
+interact the 
+
+hi there 
+my name is bhartee
+
+
+phi3 -> from microsoft
+
+
+learning and doing
+vector and trainig

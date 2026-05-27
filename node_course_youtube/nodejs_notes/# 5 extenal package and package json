@@ -1,0 +1,59 @@
+// what is external package
+// how to install external package
+// node js npm package.(color js)(npm i color)
+// what is package json
+
+
+// External Package & npm in Node.js
+
+1. What is an External Package
+An external package is a reusable library created by others and not built into Node.js.
+It adds extra features like colors, frameworks, utilities, etc.
+
+Example: colors, express, lodash
+
+2. How to Install External Package
+External packages are installed using npm (Node Package Manager).
+Command used in terminal:
+npm install colors
+npm i colors
+
+// Uses in node
+const colors = require("colors");
+console.log("Hello Node".green);
+console.log("Error Message".red);
+
+
+// 4. What is package.json
+
+package.json is a configuration file for a Node.js project.
+It stores project details and installed dependencies.
+Example content:
+
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
+
+// Uses of package.json:
+Manages project information
+Tracks installed packages
+Helps recreate the project using npm install
+
+
+// package-lock.json in Node.js
+
+What it is:
+package-lock.json is automatically generated when you install npm packages. It locks the exact version of every installed package and its dependencies.
+
+Purpose:
+Ensures that the project works the same on every machine.
+Prevents issues caused by automatic updates of dependencies.
+Improves installation speed because npm knows the exact versions to fetch.
+
+// Difference from package.json:
+package.json lists direct dependencies with version ranges.
+package-lock.json records exact versions of all dependencies and sub-dependencies.

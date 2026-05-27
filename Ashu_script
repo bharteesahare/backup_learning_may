@@ -1,0 +1,76 @@
+49.248.28.78:4433
+ashiwn.borkar
+c2lbiz@1234
+LocalDomain
+
+
+==================FOR PATIAL SYNC START==============
+
+download latest db copy from the sharepoint zip.
+
+SunSmart-FullSync -> start krna h ek bar then close it
+
+c > SunSmart-FullSync > Rho > db > 
+zip dala
+zip mai se db like 'syncdbmaster' also inside paste into db folder
+
+===============FOR PARTIAL SYNC END===============
+
+DB OPEN:
+Output model:
+run the query(delete) which is give from the sharad.
+run query
+write changes
+Now check the master table
+SyncEntity -> check master
+Output DATA 6 TABLE -> 
+7 TABLE WE destroy which in query > check blank
+
+
+NOTE:
+AT -> 
+1. 200.32 -> for Slocpi
+2. 200.133 -> for slgfi
+
+ST ->
+1. 200.39 -> for slocpi
+2. 200.253 -> for slgfi
+
+Latest ->
+1. 200.48 -> for slocpi 
+2. 200.164 -> for slgfi
+
+URL OPEN: 
+check 40 up or not. from the url. -> ask question
+using 40 url
+SunSmart-FullSync -> run and login and password
+accept 
+syncronize
+
+
+Check data.
+c > SunSmart-FullSync > Rho > db > 
+Now zip the syncdbmaster
+rename the syncdbmaster_17SEP_SLOPI_AT
+
+
+SHARE POINT: UPLOAD GYM FOLDER
+GOTO SUN PH VB> Offline
+CREATE FOLDER TODAY DATE
+CREATE FOLDER Partial Sync > AT > PASTE
+
+
+MACBOOK:
+Now Start The Build Process on MAC:
+Folder Upload to MACBook
+SLOPI DB -> create folder today date.
+
+FOR ST: go to kunj and in their upload db
+FOR AT: go to 6March > slopi db
+
+NOW go to home your document c > SunSmart-FullSync > Rho > db > upload zip db here 
+
+
+
+slifi :
+48.91

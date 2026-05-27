@@ -1,0 +1,36 @@
+Switch / Case Statement in Ruby
+
+case expression
+when value1
+# code to execute if expression equals value1
+when value2
+# code to execute if expression equals value2
+else 
+# code to execute if expression does not match any of the above values
+end
+
+puts "enter the number between 1 to 7:"
+day = gets.chomp.to_i
+case day
+when 1 
+	puts "sunday"
+when 2
+	puts "monday"
+when 3
+	puts "tuesday"
+when 4
+	puts "wednesday"
+when 5
+	puts "thursday"
+when 6
+	puts "friday"
+when 7
+	puts "saturday"
+else
+	puts "Invalid day"
+end
+
+Key Points:
+case is evaluated once, and the value is compared to each when.
+else is optional but useful for unmatched values.
+Each when block runs only if it matches the case expression.

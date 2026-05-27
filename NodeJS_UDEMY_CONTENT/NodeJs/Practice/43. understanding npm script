@@ -1,0 +1,17 @@
+# npm -> node package manager
+party package
+
+
+
+npm init
+-> name of your package  if you don't pick pick the default it.
+-> entry point 
+-> author name
+
+package.json -> confgurraton file.
+    scripts -> your own scripts
+    "start": "node app.js"
+
+
+run -> npm start -> it execute the app.js 
+we can add the more scripts.

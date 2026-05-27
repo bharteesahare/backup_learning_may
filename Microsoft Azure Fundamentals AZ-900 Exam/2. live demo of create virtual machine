@@ -1,0 +1,178 @@
+Below are **clean, well-structured notes** suitable for a **live demo walkthrough on creating a Virtual Machine (VM)** in a cloud portal (e.g., Azure).
+You can use these as **presentation notes or training material**.
+
+---
+
+# **📘 Live Demo Notes: How to Create a Virtual Machine**
+
+## **1. BASICS TAB**
+
+### **Subscription**
+
+* Select the subscription under which the VM will be billed.
+
+### **Resource Group**
+
+* Choose an existing Resource Group **or** create a new one.
+* Resource Group = Logical container for VM & related resources.
+
+### **Availability Options**
+
+* Options:
+
+  * **No infrastructure redundancy required**
+  * **Availability Zone**
+  * **Availability Set**
+
+### **Image (Operating System)**
+
+Choose OS image such as:
+
+* **Windows Server**
+* **Linux Ubuntu**
+* **RedHat Enterprise Linux**
+
+### **Region**
+
+Select where the VM will be hosted:
+
+* **West US 2**
+* **Asia regions**
+* **South Africa**
+* **Australia**
+  *(Choose based on performance and compliance needs.)*
+
+### **Size**
+
+* Choose VM hardware size:
+
+  * **Small**
+  * **Medium**
+  * **Large**
+* Shows **monthly pricing**, e.g., ~$200/month
+* Choose based on CPU, RAM, workload needs.
+
+### **Administrator Account**
+
+* **Username**
+* **Password**
+* **Confirm Password**
+
+### **Public Inbound Ports**
+
+* Select which ports to allow inbound.
+* Choose:
+
+  * **Allow selected ports**
+  * **Port: RDP (3389)** for Windows VMs
+
+Click **Next** to go to Disks.
+
+---
+
+## **2. DISKS TAB**
+
+* Default settings are usually sufficient.
+* Select:
+
+  * **OS Disk Type**: Standard SSD / Premium SSD
+  * **Disk Size**
+    (Defaults are fine for most demos.)
+
+Click **Next**.
+
+---
+
+## **3. NETWORKING TAB**
+
+### **Virtual Network (VNet)**
+
+* Every VM must belong to a **virtual network**.
+* Either:
+
+  * Use **existing VNet**, or
+  * Create a **new VNet** automatically.
+
+### Other networking components:
+
+* Subnet
+* Public IP
+* NIC network security group (NSG)
+
+Leave defaults unless customization is needed.
+
+Click **Next**.
+
+---
+
+## **4. MANAGEMENT TAB**
+
+* Most settings can remain **default**.
+* Options here include:
+
+  * Auto-shutdown
+  * Backup
+  * Identity
+  * System updates
+
+Click **Next**.
+
+---
+
+## **5. MONITORING TAB**
+
+### Diagnostics
+
+* **Boot diagnostics**: Disable for demo
+  (Shows faster deployment and reduced cost)
+
+Click **Next**.
+
+---
+
+## **6. REVIEW + CREATE TAB**
+
+* Azure validates all settings.
+* Right side shows **pricing estimate**:
+
+  * VM compute cost
+  * Disk storage cost
+  * Networking cost
+  * Data transfer estimate
+
+Click **Create** to deploy the VM.
+
+---
+
+# **🛠️ After Creation**
+
+### **Delete Virtual Machine**
+
+* VM and associated resources can be deleted anytime to stop billing.
+
+### **Easy to Upgrade the VM**
+
+* You can **resize** the VM:
+
+  * Increase CPU/RAM
+  * Change disk type
+* **Resizing affects the hourly cost.**
+* Demonstrates the **flexibility and power of cloud computing**.
+
+---
+
+# **⚡ Availability + Scale**
+
+* VMs can be added to:
+
+  * **Availability Sets**
+  * **Availability Zones**
+* Helps improve uptime and resilience.
+
+---
+
+# **⚙️ Resize Virtual Machine**
+
+* Stop the VM → Choose a new Size → Start again.
+* Pricing changes based on new size.
+  Shows the **power of cloud elasticity**.

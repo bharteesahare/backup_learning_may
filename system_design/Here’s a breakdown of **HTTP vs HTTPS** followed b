@@ -1,0 +1,42 @@
+Here’s a breakdown of **HTTP vs HTTPS** followed by a brief overview of **System Design**:
+
+---
+
+### 🔐 HTTP vs HTTPS
+
+| Feature         | HTTP (HyperText Transfer Protocol)    | HTTPS (HTTP Secure)                           |
+| --------------- | ------------------------------------- | --------------------------------------------- |
+| **Security**    | Unsecured – data sent in plaintext    | Encrypted using SSL/TLS                       |
+| **Port**        | 80                                    | 443                                           |
+| **Data Safety** | Vulnerable to MITM attacks            | Protects against interception & tampering     |
+| **URL Format**  | `http://example.com`                  | `https://example.com`                         |
+| **SSL/TLS**     | Not used                              | Requires SSL/TLS certificate                  |
+| **Use Cases**   | Internal/test sites (not recommended) | Secure web applications (banking, e-commerce) |
+
+---
+
+### 🏗️ System Design Overview
+
+System design is the process of defining the architecture, components, modules, and data for a system to satisfy specific requirements.
+
+#### Key Components:
+
+1. **Client** – Sends requests (browser, mobile app)
+2. **API Gateway** – Routes requests, rate limiting
+3. **Load Balancer** – Distributes traffic across servers
+4. **Application Servers** – Handle business logic
+5. **Database** – Stores data (SQL or NoSQL)
+6. **Cache** – Speeds up reads (e.g., Redis, Memcached)
+7. **Message Queue** – Handles async jobs (e.g., Kafka, RabbitMQ)
+8. **CDN** – Delivers static content faster (e.g., Cloudflare)
+
+#### Common Concepts:
+
+* **Scalability**: Vertical (bigger server) or horizontal (more servers)
+* **High Availability**: Ensure uptime with redundancy
+* **Database Replication & Sharding**
+* **CAP Theorem**: Trade-offs between Consistency, Availability, Partition Tolerance
+
+---
+
+Would you like a system design example (e.g., design Instagram, URL shortener, or chat app)?

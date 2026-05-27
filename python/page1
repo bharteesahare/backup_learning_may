@@ -1,0 +1,36 @@
+Install pip (Python’s package manager):
+
+pip3 --version
+pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)
+If not, install it:
+sudo apt install python3-pip -y
+
+
+Create the virtual enviornment:
+
+step1 : Install the venv package
+Run this command:
+sudo apt install python3.10-venv -y
+
+Step 2: Recreate your virtual environment
+Now that venv is installed, recreate your environment:
+python3 -m venv venv
+
+
+Step 3: Activate the environment
+source venv/bin/activate
+
+Once activated, your terminal prompt will change to something like:
+(venv) bharti@MLLLAPH01647:~/Documents/ai_todo_app$
+
+
+Step 2: Install Core Libraries
+
+These are the essential libraries for handling data, basic AI, and logic:
+
+pip install numpy pandas scikit-learn nltk
+
+NumPy → Handles numbers and arrays
+Pandas → Helps store and process task lists easily
+Scikit-learn → Machine learning toolkit (for priorities, recommendations, etc.)
+NLTK → Natural language tools (for understanding text like “remind me to call mom”)

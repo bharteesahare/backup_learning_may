@@ -1,0 +1,25 @@
+Prompt Sample : Create a Study Plan
+
+i have a student who wants to take and pass the az-900 exam in the next 14 days. please create a study plan for them that lays out around one hour per day of studying for the exam. Make sure it's based on the latest exam requirements listed here: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900
+
+
+Prompt Sample : Create a Practice Quiz
+
+i have a student who wants to take and pass the az-900 exam. i want you to quiz me. come up with a multiple-choice practice test exam question but don't tell me the answer. Then I will guess the answer, and you will tell me if it's correct or not. If I get it wrong, explain why. Then create another multiple-choice practice test exam question and we'll do it again. Make sure it's based on the latest exam requirements listed here: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900
+
+
+Prompt Sample : Ask It On a AZ-900 Topic
+
+i have a student who wants to take and pass the az-900 exam. please explain the concept of the public and private endpoints. ensure your explanation is thorough enough for the level of the az-900 exam. 
+
+
+
+ChatGPT:
+https://chatgpt.com/
+
+Google Gemini:
+https://gemini.google.com/app
+
+Google NotebookLM:
+https://notebooklm.google.com/
+

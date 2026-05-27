@@ -1,0 +1,65 @@
+better  verison of javascript -> extra feature
+tyepscript is superset f javascript -> javascript all feature + and extra feature and functionality.
+superset -> 
+
+nest cli
+
+prod mkdir scratch
+cd 
+
+npm init -y
+
+npm install --nest
+
+nest js dependencies:
+nestjs/common -> contatin vast majorrity of function, classes etc that we need from nest
+nestjs/platform-express -> lets nest use express js for handling http request
+nestjs/metadata -> helps make decorators work, tons more on this in just a minute
+tyepscript -> we write nest app with typescript
+
+nest 
+
+request -> http impementaion(express or fastify used ) -> our code
+response <- 
+
+we are using the express
+
+reflect decorators.
+
+install dep
+setup typescrip complier setting
+create a nest module and controller.
+
+create the new file tsconfig.json file
+    {
+        "complierOptions": {
+            "module": "commonjs",
+            "tagget": "es2017",
+            "experimentalDecorations": true,
+            "emitDecoratorMetadata": true
+        }
+    }
+
+npm is used to install and manage packages.
+Example
+npm i -g @nestjs/cli
+nest new project-name
+
+npx -> Node Package eXecute
+npx @nestjs/cli new project-name
+This runs the NestJS CLI directly, without a global install.    
+
+Part of nest
+imp ->controller -> handle incoming request
+service -> handle data acess and business logic
+imp -> modules -> groups togesther code
+pipes -> validates incoming data
+filters -> handles error that occur during request handling
+guards -> handles authetication
+intercetors -> adds extra logic to incoming requests or outgoing responses
+repositories -> handles data stores in db
+
+Command	Scope	Use case
+npm install	Local	Install in project, use in scripts or imports
+npm install -g	Global	Make commands available everywhere
+npx	Temporary / run-once	Run a CLI without global install

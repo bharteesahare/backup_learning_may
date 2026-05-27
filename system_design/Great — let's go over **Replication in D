@@ -1,0 +1,109 @@
+Great — let's go over **Replication in Databases** from a **System Design** perspective.
+
+---
+
+## 📌 What is Replication?
+
+**Replication** is the process of **copying data from one database (the primary)** to **one or more other databases (replicas or secondaries)** to:
+
+* Improve **availability**
+* Increase **read scalability**
+* Provide **fault tolerance**
+
+---
+
+## 🧠 Why Use Replication?
+
+| Goal                  | How Replication Helps                                     |
+| --------------------- | --------------------------------------------------------- |
+| **High availability** | If the primary fails, a replica can take over.            |
+| **Read scalability**  | Distribute reads across multiple replicas.                |
+| **Disaster recovery** | Keep a copy in another data center/region.                |
+| **Backup**            | Take backups from replicas without affecting the primary. |
+
+---
+
+## 🔀 Types of Replication
+
+| Type                               | Description                                                      | Use Case                                 |
+| ---------------------------------- | ---------------------------------------------------------------- | ---------------------------------------- |
+| **Master-Slave** (Primary-Replica) | One **primary** handles writes; **replicas** handle reads.       | Common in MySQL, PostgreSQL setups       |
+| **Master-Master**                  | Two (or more) databases act as primary — both can accept writes. | High availability, complex to manage     |
+| **Synchronous**                    | Primary waits for replica to confirm before committing.          | Strong consistency                       |
+| **Asynchronous**                   | Primary doesn't wait — faster, but replica may lag.              | Better performance, eventual consistency |
+| **Semi-synchronous**               | Primary waits for at least one replica.                          | Balance of consistency & speed           |
+
+---
+
+## 🔁 How it works (simplified)
+
+1. Primary logs changes (binary log / WAL / oplog).
+2. Replica connects to primary and **replays** those changes.
+3. Replica updates its copy of the data.
+
+---
+
+## 🔍 Example: MySQL Replication
+
+* Enable binary logging on primary
+* Replicas connect using a position or GTID (Global Transaction ID)
+* All writes happen on the master, reads on replicas
+
+---
+
+## ⚖️ Trade-offs in Replication
+
+| Factor                | Master-Slave                    | Master-Master                         |
+| --------------------- | ------------------------------- | ------------------------------------- |
+| **Write scalability** | ❌ Limited (writes go to 1 node) | ✅ Multiple writers                    |
+| **Read scalability**  | ✅ Easy with replicas            | ✅ But needs conflict handling         |
+| **Complexity**        | Low                             | High (conflict resolution, loops)     |
+| **Consistency**       | Eventual (if async)             | Harder to maintain strong consistency |
+
+---
+
+## ⚠️ Problems in Replication
+
+| Problem                 | Description                          | Mitigation                         |
+| ----------------------- | ------------------------------------ | ---------------------------------- |
+| **Replication lag**     | Replica is behind primary            | Monitor lag, use sync or semi-sync |
+| **Stale reads**         | Reading from a lagging replica       | Route critical reads to primary    |
+| **Split-brain**         | Two primaries write conflicting data | Use quorum/leader election         |
+| **Conflict resolution** | In master-master                     | Use timestamps, custom logic       |
+
+---
+
+## 🌍 Replication in Distributed Databases
+
+| Database        | Replication Strategy                    |
+| --------------- | --------------------------------------- |
+| **MongoDB**     | Replica sets (1 primary, N secondaries) |
+| **PostgreSQL**  | Streaming replication                   |
+| **MySQL**       | Binlog-based replication                |
+| **Cassandra**   | Peer-to-peer replication (no master)    |
+| **DynamoDB**    | Multi-region replication (internal)     |
+| **CockroachDB** | Synchronous raft-based replication      |
+
+---
+
+## ✅ Best Practices
+
+* Use **semi-sync** if you need balance between speed and durability.
+* Monitor **replication lag** and alert on it.
+* In master-slave, route **critical reads** to the primary.
+* Don’t write to replicas unless it's master-master and conflict-safe.
+
+---
+
+## 🧠 Summary
+
+| Key Concept         | Explanation                                               |
+| ------------------- | --------------------------------------------------------- |
+| **Replication**     | Keeps multiple DB copies for redundancy, scale, and speed |
+| **Primary/Replica** | One handles writes; others follow                         |
+| **Sync vs Async**   | Trade-off between consistency and speed                   |
+| **Master-Master**   | Complex but allows more write flexibility                 |
+
+---
+
+Would you like a diagram showing replication topologies or a cheat-sheet comparing RDBMS and NoSQL replication strategies?

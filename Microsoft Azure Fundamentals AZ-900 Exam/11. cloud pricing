@@ -1,0 +1,177 @@
+Here are **clean, organized, exam-ready notes** on **Cloud Pricing** based on everything you provided.
+Perfect for **AZ-900 teaching**, handouts, or student revision.
+
+---
+
+# **💰 Cloud Pricing – Notes**
+
+## **What is Cloud Pricing?**
+
+Cloud pricing refers to **how you use and pay for cloud services**.
+
+**Definition:**
+
+> *Cloud computing is the delivery of computing services over the internet using a **pay-as-you-go** pricing model.*
+
+You only pay for:
+
+* What you use
+* How long you use it
+* How much you use
+
+---
+
+# **⚠️ Cloud Pricing Complexity (Downsides)**
+
+Although cost savings are possible, cloud pricing can also be a challenge:
+
+* **Hard to predict monthly bills**
+* **Difficult to understand true cost before using a service**
+* **Potential for big savings… but also cost overruns** if not managed
+* Many different pricing components based on usage
+
+---
+
+# **🧩 Factors Affecting VM Pricing (Azure Virtual Machines)**
+
+1. **Geographical Region**
+
+   * North America, Asia, Europe, etc.
+   * Prices vary by region.
+
+2. **Instance Size**
+
+   * VM size (CPU, RAM)
+   * Bigger = more expensive.
+
+3. **Bandwidth / Network Traffic**
+
+   * Inbound = free
+   * Outbound = charged
+
+4. **Reservation / Savings Plan**
+
+   * Reserve 1–3 years → big discounts
+   * Commit to usage → cheaper
+
+5. **Operating System SKU / License**
+
+   * Windows = more expensive (license included)
+   * Linux = cheaper (open source)
+
+6. **Disk Type / Size**
+
+   * HDD, SSD, Premium SSD
+   * Larger disks cost more
+
+7. **Backup Storage**
+
+   * Extra storage costs for snapshots, backups, recovery services
+
+8. **Support Agreement**
+
+   * Basic (free), Developer, Standard, Professional Direct → affects cost
+
+---
+
+# **🧩 Factors Affecting Cosmos DB Pricing**
+
+Azure Cosmos DB pricing depends on:
+
+1. **API Choice**
+
+   * SQL API
+   * MongoDB API
+   * Cassandra API
+   * Table API
+   * Gremlin API
+     Some APIs cost more due to features or throughput patterns.
+
+2. **Throughput (Request Units / RU/s)**
+
+   * You pay for RUs consumed by operations.
+
+3. **Storage**
+
+   * Size of stored data
+   * Backup retention
+   * Indexing
+
+4. **Operations**
+
+   * Reads, writes, queries
+   * Cost per operation in RUs
+
+---
+
+# **🟦 Free Services (Free Tier)**
+
+Azure offers **55+ services** with a free tier.
+Examples include:
+
+* API Management (developer tier)
+* App Configuration
+* Azure Functions
+* Storage (limited free GB)
+* VMs (small B1S VM in some regions)
+
+These allow experimentation without cost.
+
+---
+
+# **💵 Pricing Models in Azure**
+
+### **1. Pay for Time**
+
+* VMs charged per second or per hour
+* Functions charged per execution time
+
+### **2. Pay for Storage (per GB)**
+
+* Fairly cheap
+* Example: ~$0.02 per GB per month
+
+### **3. Pay for Operations**
+
+* Writes, reads, queries
+* Used mainly in:
+
+  * Cosmos DB
+  * Storage transactions
+  * Queues
+
+### **4. Data Transfer**
+
+* **Inbound = free**
+* **Outbound = charged**
+* One of the most common hidden costs
+
+---
+
+# **📈 Predictable Billing Tools**
+
+To avoid surprise bills, use:
+
+* Azure Pricing Calculator
+* Azure Cost Management
+* Budgets & Alerts
+* Tags for tracking usage
+* Reservations for discounted long-term plans
+
+---
+
+# **⭐ Summary**
+
+Cloud pricing = pay only for what you consume.
+But pricing can be complex due to many variables:
+
+* Region
+* Size
+* Storage
+* Bandwidth
+* Reservations
+* OS license
+* API choice (for Cosmos DB)
+
+Free tiers and predictable billing tools help control costs.
+

@@ -1,0 +1,113 @@
+To define the associations for the scenario where a user can belong to multiple companies with different roles, you can use the following models and associations:
+
+1. **User Model**:
+
+```ruby
+# user.rb
+class User < ApplicationRecord
+  has_many :user_companies
+  has_many :companies, through: :user_companies
+end
+```
+
+2. **Company Model**:
+
+```ruby
+# company.rb
+class Company < ApplicationRecord
+  has_many :user_companies
+  has_many :users, through: :user_companies
+end
+```
+
+3. **UserRole Model**:
+
+```ruby
+# user_role.rb
+class UserRole < ApplicationRecord
+  belongs_to :user
+  belongs_to :company
+
+  enum role: { admin: 0, employee: 1, manager: 2 }
+end
+```
+
+4. **UserCompany Model**:
+
+```ruby
+# user_company.rb
+class UserCompany < ApplicationRecord
+  belongs_to :user
+  belongs_to :company
+  belongs_to :user_role
+
+  delegate :role, to: :user_role
+end
+```
+
+In this setup, the `User` model has a many-to-many association with the `Company` model through the `UserCompany` model. The `UserCompany` model acts as a join model, and the `UserRole` model is used to define the different roles a user can have in a company.
+
+To design the database schema for this association, you will need the following tables:
+
+1. **users**:
+   - id (primary key)
+   - other user-related columns
+
+2. **companies**:
+   - id (primary key)
+   - other company-related columns
+
+3. **user_roles**:
+   - id (primary key)
+   - user_id (foreign key referencing users.id)
+   - company_id (foreign key referencing companies.id)
+   - role (string column to store the role, e.g., 'admin', 'employee', 'manager')
+
+4. **user_companies**:
+   - id (primary key)
+   - user_id (foreign key referencing users.id)
+   - company_id (foreign key referencing companies.id)
+   - user_role_id (foreign key referencing user_roles.id)
+
+To generate the necessary models and migrations, you can use the following commands:
+
+```bash
+rails generate model User
+rails generate model Company
+rails generate model UserRole user:references company:references role:string
+rails generate model UserCompany user:references company:references user_role:references
+```
+
+This will generate the models and migration files. Open the migration files and update them according to the schema design described above.
+
+To create a user with a specific role in a company, you can use the following example:
+
+```ruby
+# Create a new user
+user = User.create(name: "John")
+
+# Create a new company
+company = Company.create(name: "Acme Inc.")
+
+# Create a user role for the user in the company
+user_role = UserRole.create(user: user, company: company, role: :admin)
+
+# Associate the user with the company and user role
+UserCompany.create(user: user, company: company, user_role: user_role)
+```
+
+To query which user belongs to which company and their roles, you can use the following ActiveRecord queries:
+
+```ruby
+# Find a user's companies and roles
+user = User.find(1)
+companies = user.companies
+user_companies = user.user_companies
+
+# Find a company's users and their roles
+company = Company.find(1)
+users = company.users
+user_companies = company.user_companies
+```
+
+These queries will return the associated records, allowing you to access the user's companies, the company's users, and the user's roles within

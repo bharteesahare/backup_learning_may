@@ -1,0 +1,75 @@
+In **system design**, **normalization** typically refers to the **process of organizing data** to reduce redundancy and improve data integrity — especially in the context of **database schema design**.
+
+---
+
+### 🔍 What is Normalization?
+
+**Normalization** is the process of structuring a relational database in accordance with a series of **normal forms** to:
+
+* Minimize **data duplication**
+* Avoid **update anomalies**
+* Ensure **data integrity**
+
+---
+
+### 🧱 Normal Forms (Basics)
+
+1. **1NF (First Normal Form)**
+
+   * Eliminate repeating groups
+   * Ensure atomic (indivisible) values
+
+2. **2NF (Second Normal Form)**
+
+   * Be in 1NF
+   * Remove partial dependencies (only applies to composite primary keys)
+
+3. **3NF (Third Normal Form)**
+
+   * Be in 2NF
+   * Remove transitive dependencies (non-key → non-key relationships)
+
+---
+
+### ⚖️ Normalization vs. Denormalization in System Design
+
+| Aspect                | Normalization                           | Denormalization                          |
+| --------------------- | --------------------------------------- | ---------------------------------------- |
+| **Purpose**           | Reduce redundancy, maintain integrity   | Improve performance, reduce joins        |
+| **Read Performance**  | Slower (more joins)                     | Faster (fewer joins)                     |
+| **Write Performance** | Easier (less duplicated data to update) | Harder (more places to update same info) |
+| **Use Case**          | OLTP (transactional systems)            | OLAP (analytical/reporting systems)      |
+
+---
+
+### 🛠 Example
+
+Let’s say you have an invoice system:
+
+**Without Normalization** (Flat table):
+
+```plaintext
+InvoiceID | CustomerName | ProductName | ProductPrice
+-----------------------------------------------------
+1         | John         | Keyboard    | 50
+1         | John         | Mouse       | 20
+```
+
+**With Normalization** (Relational tables):
+
+* `Customers (CustomerID, Name)`
+* `Invoices (InvoiceID, CustomerID)`
+* `Products (ProductID, Name, Price)`
+* `InvoiceItems (InvoiceID, ProductID)`
+
+---
+
+### 🧠 In System Design Interviews
+
+You may mention normalization when discussing:
+
+* Database schema planning
+* Tradeoffs between performance and integrity
+* Designing scalable transactional systems
+
+Let me know if you'd like a diagram or example schema walkthrough.

@@ -1,0 +1,13 @@
+npm init- y
+download the below package
+express dotenv pg cors joi
+
+npm i express dotenv pg cors joi
+
+npm i --save-dev nodemon
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+
+important link: to install the docker in your local machine.
+https://docs.docker.com/desktop/setup/install/linux/ubuntu/

@@ -1,0 +1,46 @@
+A String object has an arbitrary sequence of bytes, typically representing text or binary data.
+A String object may be created using String::new or as literals.
+
+Some characters can be represented as escape sequences in double-quoted strings, character literals, here document literals (non-quoted, double-quoted, and with backticks), double-quoted symbols, double-quoted symbol keys in Hash literals, Regexp literals, and several percent literals (%, %Q, %W, %I, %r, %x).
+
+Key points:
+%q
+    Single-quoted string
+    No interpolation or escape sequences (except \\, \')
+    %q(Hello\nWorld) → "Hello\\nWorld"
+%Q or %
+    Double-quoted string
+    Supports interpolation and escape sequences
+    name = "Ruby"
+    %Q(Hello #{name}) → "Hello Ruby"
+%w
+    Array of words (strings)
+    No interpolation or escapes
+    %w(one two three) → ["one", "two", "three"]
+%W
+    Array of words (strings)
+    Allows interpolation and escape sequences
+    lang = "Ruby"
+    %W(Hello #{lang}) → ["Hello", "Ruby"]
+%i
+    Array of symbols
+    No interpolation
+    %i(foo bar) → [:foo, :bar]
+%I
+    Array of symbols
+    Allows interpolation
+    item = "bar"
+    %I(foo #{item}) → [:foo, :bar]
+
+%r – Regular Expression literal
+    Used for regex, helpful when the pattern includes slashes (/) so you can avoid escaping them.
+    Supports interpolation.
+    %r{https?://[\w.]+}  # → same as /https?:\/\/[\w.]+/
+    pattern = "abc"
+    %r(#{pattern})       # → /abc/
+
+ %x – Backtick literal (executes shell commands)
+    Executes a command in the system shell.
+    Returns the output as a string.
+    %x(ls)         # → same as `ls`
+    %x(echo hello) # → "hello\n"

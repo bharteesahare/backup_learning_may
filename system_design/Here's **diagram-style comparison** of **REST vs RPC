@@ -1,0 +1,41 @@
+Here’s a **diagram-style comparison** of **REST vs RPC** that you can visualize like a class or structural chart to help you remember easily:
+
+---
+
+```
+           +--------------------+                     +--------------------+
+           |       REST         |                     |        RPC         |
+           +--------------------+                     +--------------------+
+           | Resource-Oriented  |                     | Action-Oriented    |
+           | Uses Nouns         |                     | Uses Verbs         |
+           +--------------------+                     +--------------------+
+           | URL: /users/123    |                     | URL: /getUser?id=123|
+           | (Resource ID)      |                     | (Method Call)       |
+           +--------------------+                     +--------------------+
+           | HTTP Verbs:        |                     | Mostly uses POST   |
+           | GET, POST, PUT     |                     |                    |
+           | DELETE             |                     |                    |
+           +--------------------+                     +--------------------+
+           | Stateless, Cacheable|                    | Not inherently     |
+           |                    |                     | stateless          |
+           +--------------------+                     +--------------------+
+           | Follows HTTP Specs |                     | Custom Protocols   |
+           | (Standardized)     |                     | (e.g., gRPC)       |
+           +--------------------+                     +--------------------+
+           | Example:           |                     | Example:           |
+           | GET /orders/45     |                     | POST /getOrder     |
+           |                    |                     | Body: {id: 45}     |
+           +--------------------+                     +--------------------+
+           | Good for CRUD APIs |                     | Good for Complex   |
+           |                    |                     | Actions            |
+           +--------------------+                     +--------------------+
+```
+
+---
+
+### 🔑 Quick Mnemonics:
+
+* **REST** = **R**esource-based, **E**asy to cache, **S**calable, **T**raditional web.
+* **RPC** = **R**emote **P**rocedure **C**all (like function calls over the network).
+
+Let me know if you'd like this in a PDF or markdown form for your notes.

@@ -1,0 +1,103 @@
+21. Custom Pipes – NestJS (Notes)
+
+1. What is a Custom Pipe?
+A custom pipe is a user-defined pipe
+Used when built-in pipes are not enough
+Helps with custom validation or transformation
+
+2. Why use Custom Pipes?
+Business-specific validation
+Reusable logic
+Cleaner controller code
+
+3. Pipe Interface
+A custom pipe must implement:
+PipeTransform
+
+
+4. Basic Structure of a Custom Pipe
+import { PipeTransform, Injectable } from '@nestjs/common';
+
+@Injectable()
+export class CustomPipe implements PipeTransform {
+  transform(value: any) {
+    return value;
+  }
+}
+
+
+5. Example 1: Validate String Length
+import { PipeTransform, Injectable, BadRequestException } from '@nestjs/common';
+
+@Injectable()
+export class NameValidationPipe implements PipeTransform {
+  transform(value: string) {
+    if (value.length < 3) {
+      throw new BadRequestException('Name is too short');
+    }
+    return value;
+  }
+}
+
+
+6. Using Custom Pipe
+Method Level
+@Post()
+createUser(@Body('name', NameValidationPipe) name: string) {}
+
+
+Parameter Level
+@Get(':id')
+findOne(@Param('id', NameValidationPipe) id: string) {}
+
+
+Controller Level
+@UsePipes(NameValidationPipe)
+@Controller('users')
+export class UserController {}
+
+
+Global Level
+app.useGlobalPipes(new NameValidationPipe());
+
+
+7. Example 2: Transform Input Data
+@Injectable()
+export class UpperCasePipe implements PipeTransform {
+  transform(value: string) {
+    return value.toUpperCase();
+  }
+}
+
+
+8. Pipe Execution Flow
+Request → Custom Pipe → Controller → Service
+
+
+9. Key Points (Exam Ready)
+Custom pipes implement PipeTransform
+Can throw exceptions for validation
+Can transform incoming data
+Reusable and injectable
+
+10. Difference: Built-in Pipe vs Custom Pipe
+Built-in Pipe
+Custom Pipe
+Provided by NestJS
+Created by developer
+Common use cases
+Business logic
+Ready to use
+Fully customizable
+
+
+11. One-Line Definition
+A custom pipe in NestJS is a user-defined class that implements PipeTransform to validate or transform request data.
+
+If you want:
+DTO + ValidationPipe example
+Async custom pipe
+Real-world project example
+
+
+

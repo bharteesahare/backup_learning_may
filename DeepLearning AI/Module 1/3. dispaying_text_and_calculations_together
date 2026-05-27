@@ -1,0 +1,159 @@
+Here are **clean, organized, long-term study notes** based on all the content you shared.
+They are written so you can read them easily **even after a year** and instantly understand the concepts.
+
+---
+
+# 📝 **Python Lesson Notes – Displaying Text and Calculations Together (F-Strings)**
+
+## **1. Basic Data Types**
+
+In Python, different types of data are used to store different kinds of information.
+
+### **Strings (text)**
+
+Enclosed in quotation marks:
+
+```python
+"Hello, world"
+"My favorite drink is Earl Grey tea"
+```
+
+### **Integers and Floats (numbers)**
+
+```python
+42       # integer
+3.14     # float (decimal number)
+```
+
+---
+
+## **2. Displaying Text**
+
+To display anything on the screen in Python, use:
+
+```python
+print("Hello, world!")
+```
+
+---
+
+## **3. Python as a Calculator**
+
+Python can also perform math inside `print()`:
+
+```python
+print(3 * 4.5)
+```
+
+---
+
+# ⭐ **4. F-Strings: Mixing Text and Calculations**
+
+F-strings allow you to combine text with calculations or variables.
+
+### **Without f-strings (does NOT compute formula):**
+
+```python
+print("The temperature 75F in degrees Celsius is ((75 - 32) * 5 / 9)C")
+```
+
+### **With f-strings (DOES compute):**
+
+```python
+print(f"The temperature 75F in degrees Celsius is {(75 - 32) * 5 / 9}C")
+```
+
+**Key rule:**
+Anything inside `{ }` in an f-string will be calculated or interpreted by Python.
+
+---
+
+# ⭐ **5. Formatting Numbers in F-Strings**
+
+### **Example: Dog years**
+
+```python
+print(f"Isabel is {28/7} dog years old.")
+# Output → 4.0
+```
+
+To remove decimal places:
+
+```python
+print(f"Isabel is {28/7:.0f} dog years old.")
+# Output → 4
+```
+
+### Format explanation:
+
+* `.0f` = show **0 decimal places**, round automatically
+* `.1f` = show **1 decimal place**
+* `.2f` = show **2 decimal places**, etc.
+
+---
+
+# ⭐ **6. Multi-line F-Strings**
+
+Use triple quotes `"""` for writing formatted multi-line messages.
+
+```python
+print(f"""
+Most countries use the metric system.
+For example, 8 fluid ounces of milk is {8 * 29.5735} ml.
+And 100 ml of water is {100 / 29.5735} fluid ounces.
+""")
+```
+
+Multi-line f-strings are great for:
+
+* long text
+* paragraphs
+* formatted reports
+
+---
+
+# ⭐ **7. Why f-Strings Are Useful**
+
+* Combine text + variables + calculations
+* Cleaner and easier to read
+* Perfect for messages, reports, logs, and formatted output
+* Very efficient
+
+---
+
+# 📝 **8. Extra Practice (With Correct Answers)**
+
+### ✔ Modify the code to print your age
+
+```python
+print(f"I am {25} years old.")
+```
+
+### ✔ Fix this code
+
+```python
+print(f"There are {365/7} weeks in a year")
+```
+
+### ✔ Complete the code (area of a square)
+
+```python
+print(f"The area of a square with side 5 cm is {5 * 5} cm squared.")
+```
+
+### ✔ Modify to display **one** decimal place
+
+```python
+print(f"The house was a good size: 1200 square feet, or {1200 * 0.092903:.1f} meters squared!")
+```
+
+---
+
+# 🎉 **Summary: Things to Remember**
+
+* Prefix a string with **f** → `f"..."`
+* Use **{ }** to insert numbers, variables, or calculations
+* Use **:.xf** to format decimal places
+* Use **triple quotes** for multi-line f-strings
+* F-strings make code readable and clean
+

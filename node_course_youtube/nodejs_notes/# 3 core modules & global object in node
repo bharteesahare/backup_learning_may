@@ -1,0 +1,39 @@
+// Module in Node.js (with small example):
+
+A module in Node.js is a reusable file that contains code (functions, variables, objects) which can be exported and used in other files.
+
+// data.js
+const username = "Bhartee";
+module.exports = username;
+
+// app.js
+const username = require("./data.js");
+console.log(username);
+
+➡️ This helps in code reusability, better organization, and clean structure.
+
+
+// Types of Modules in Node.js (one-line with example):
+Core Modules: Built-in Node.js modules (e.g., fs, http).
+const fs = require("fs");
+
+Local Modules: User-defined modules created in separate files.
+const data = require("./data.js");
+
+Third-Party Modules: External modules installed using npm.
+const express = require("express");
+
+
+// JavaScript Console vs Node.js Console
+
+JavaScript (Browser) Console:
+Runs inside the web browser
+Used for frontend debugging
+Has access to browser features like DOM, window, document
+Code executes when the webpage loads or events occur
+
+Node.js Console:
+Runs in the system terminal/command prompt
+Used for backend/server-side debugging
+No access to DOM or browser objects
+Code executes using the Node.js runtime

@@ -1,0 +1,28 @@
+Filter Function:
+
+filter an iterator from elements of an iterable for which a function return true.
+filetr our items form a list based on condition.
+
+
+def even(num):
+    if num%2==0:
+        return True
+
+
+even(24)        
+
+
+lst = [1,2,3,4,5,6]
+list(filter(even, lst))
+
+
+# filter with lambda function
+number = [1,2,3,4,5,6]
+greater_than_five = list(filter(lambda x:x>5,number))
+print(greater_than_five)
+
+
+# filter with lambda function and multiple condition
+numbers = [1,2,3,4,5,6,7,8]
+even_and_greater_than_five = filter(lambda x:x>5 and x%2==0, number)
+print(even)

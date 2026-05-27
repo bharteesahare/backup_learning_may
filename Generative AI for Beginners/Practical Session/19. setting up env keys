@@ -1,0 +1,46 @@
+chatbot:
+you want the our documnet:
+answer that content only.
+
+
+
+
+source -> pdf 
+chunks => pdf so break this pdf into the chunks. -> easier to analysis.
+embedding => need to feed this chunks to open ai to embedding for them.
+vector store => store the embedding for us that can be used later on.
+
+
+Embedding: numerical representations of text that llm can understand.
+Semantic search -> serach means get me the closest embedding between the questions and contents of the vector store.
+
+User => asked a question > open ai algoritm to convert that question also into an embedding. => nearest sematica search we can pick.
+
+
+what is the color of apple.
+-> sematic search best answer
+
+Needed:
+google colab.
+open api keys
+
+
+what is the anuual revenue private company.
+they are not answer to private docuetment just answer the public document which are available to publically.
+
+how we doing it,
+
+embedding -> numerical representations of text.
+own document my company information not publically available -> break them into small chunks , because analyze -> embedding language. open ai generate help the embeding -> vector store embeding store for us.
+user -> ask question -> same algorithm -> question  also embeding -> semantic search -> vector store -> randker result -> llm(open ai) -> result ->
+semeatic search -> give the closed search 
+
+
+what is the color of apple.
+apple is red -> closed text of emebeding 
+
+# OPENAI_API_KEY = "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"
+
+
+ # embedding = OpenAIEmbeddings(open_api_key = OPENAI_API_KEY)
+# embeddings = OpenAIEmbeddings(openai_api_key="AIzaSyBjA34ENgeGNplvIqCP-qcH2fuMkqxdO7o")

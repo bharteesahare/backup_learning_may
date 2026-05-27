@@ -1,0 +1,97 @@
+Sure! Here's a quick and clear breakdown of **Data Types in Ruby**:
+
+---
+
+## 🧠 **Ruby Data Types**
+
+Ruby is a dynamically typed language, meaning you don’t need to declare variable types explicitly.
+
+---
+
+### 🔢 1. **Numbers**
+
+#### ➤ **Integer**  
+Whole numbers (positive or negative)  
+```ruby
+num = 10
+```
+
+#### ➤ **Float**  
+Decimal numbers  
+```ruby
+price = 10.5
+```
+
+---
+
+### 🧵 2. **String**
+
+Text enclosed in quotes  
+```ruby
+name = "Ruby"
+greeting = 'Hello'
+```
+
+---
+
+### ✅ 3. **Boolean**
+
+Only two values: `true` or `false`  
+```ruby
+is_active = true
+```
+
+---
+
+### 🕳 4. **Nil**
+
+Represents “nothing” or “no value”  
+```ruby
+value = nil
+```
+
+---
+
+### 📚 5. **Array**
+
+Ordered list of items  
+```ruby
+fruits = ["apple", "banana", "cherry"]
+```
+
+---
+
+### 📦 6. **Hash**
+
+Key-value pairs (like dictionaries in Python or objects in JavaScript)  
+```ruby
+person = { name: "Alice", age: 25 }
+```
+
+---
+
+### 🔤 7. **Symbol**
+
+Lightweight immutable strings, often used as keys in hashes  
+```ruby
+:status
+:name
+```
+
+---
+
+### 🧪 Example:
+```ruby
+puts 10.class         # => Integer
+puts 10.5.class       # => Float
+puts "hi".class       # => String
+puts true.class       # => TrueClass
+puts nil.class        # => NilClass
+puts [1, 2, 3].class  # => Array
+puts({a: 1}).class    # => Hash
+puts :key.class       # => Symbol
+```
+
+---
+
+Let me know if you want **practice problems or notes** for this topic too!

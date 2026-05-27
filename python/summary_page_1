@@ -1,0 +1,17 @@
+# 1. Create environment
+pip install virtualenv
+python -m venv ai_todo_env
+source ai_todo_env/bin/activate  # (Windows: ai_todo_env\Scripts\activate)
+
+# 2. Install base AI tools
+pip install numpy pandas scikit-learn nltk
+
+# 3. (Optional) Add web app
+pip install flask streamlit
+
+# 4. (Optional) Add AI text tools
+pip install transformers torch ->
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, urllib3, typing-extensions, triton, sympy, safetensors, pyyaml, packaging, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, networkx, MarkupSafe, idna, hf-xet, fsspec, filelock, charset_normalizer, certifi, requests, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, nvidia-cusolver-cu12, huggingface-hub, torch, tokenizers, transformers
+
+# 5. (Optional) Add notebook support
+pip install jupyterlab

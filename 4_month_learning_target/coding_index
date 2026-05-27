@@ -1,0 +1,183 @@
+Perfect 👍
+Below is a **CURATED, REAL-INTERVIEW LIST** used by **product companies, startups, and remote roles**.
+
+👉 **Total = 75 questions**
+
+* **50 DSA (Coding)**
+* **25 System Design (Backend + AI focused)**
+
+These are **NOT random LeetCode problems** — these are **high-frequency interview questions**.
+
+---
+
+# 🧠 TOP 50 DSA QUESTIONS (Must-Do)
+
+## 🟢 Arrays & Strings (12)
+
+1. Two Sum
+2. Best Time to Buy & Sell Stock
+3. Maximum Subarray (Kadane’s Algorithm)
+4. Move Zeroes
+5. Contains Duplicate
+6. Product of Array Except Self
+7. Rotate Array
+8. Merge Intervals
+9. Longest Substring Without Repeating Characters
+10. Valid Anagram
+11. Group Anagrams
+12. String Compression
+
+---
+
+## 🟡 Sliding Window & Two Pointers (8)
+
+13. Longest Repeating Character Replacement
+14. Minimum Window Substring
+15. Container With Most Water
+16. Trapping Rain Water
+17. Remove Duplicates from Sorted Array
+18. Longest Palindromic Substring
+19. Subarray Sum Equals K
+20. Permutation in String
+
+---
+
+## 🔵 HashMap & Prefix Sum (6)
+
+21. First Unique Character
+22. Top K Frequent Elements
+23. Longest Consecutive Sequence
+24. Subarray Sum Divisible by K
+25. Majority Element
+26. Find All Duplicates in Array
+
+---
+
+## 🟣 Stack & Queue (6)
+
+27. Valid Parentheses
+28. Min Stack
+29. Next Greater Element
+30. Daily Temperatures
+31. Evaluate Reverse Polish Notation
+32. Sliding Window Maximum
+
+---
+
+## 🔴 Linked List (5)
+
+33. Reverse Linked List
+34. Detect Cycle in Linked List
+35. Merge Two Sorted Lists
+36. Remove Nth Node From End
+37. LRU Cache
+
+---
+
+## 🟠 Trees & Binary Search (7)
+
+38. Maximum Depth of Binary Tree
+39. Validate Binary Search Tree
+40. Lowest Common Ancestor
+41. Binary Tree Level Order Traversal
+42. Invert Binary Tree
+43. Kth Smallest Element in BST
+44. Serialize & Deserialize Binary Tree
+
+---
+
+## ⚫ Graph & DFS/BFS (6)
+
+45. Number of Islands
+46. Clone Graph
+47. Course Schedule
+48. Word Ladder
+49. Pacific Atlantic Water Flow
+50. Shortest Path in Binary Matrix
+
+---
+
+# 🏗️ TOP 25 SYSTEM DESIGN QUESTIONS (Backend + AI)
+
+## 🟢 Backend / API Design (10)
+
+51. Design a URL Shortener
+52. Design a REST API for a Job Portal
+53. Design Authentication System (JWT, OAuth)
+54. Design Rate Limiter
+55. Design Notification System
+56. Design File Upload Service (S3-like)
+57. Design Search API
+58. Design Background Job System
+59. Design Logging & Monitoring System
+60. Design Multi-Tenant SaaS Application
+
+---
+
+## 🔵 Scalability & Databases (7)
+
+61. Design Database for Chat Application
+62. Design System for 1M Concurrent Users
+63. Design Caching Strategy (Redis)
+64. Design Read/Write Heavy System
+65. Design Leaderboard System
+66. Design Real-Time Analytics System
+67. Design Data Partitioning Strategy
+
+---
+
+## 🟣 AI & Modern System Design (8) 🔥
+
+68. Design AI Chatbot System
+69. Design ChatGPT-like Feature in SaaS
+70. Design AI Content Generation System
+71. Design AI Recommendation Engine
+72. Design AI Smart Search
+73. Design AI Cost Optimization System
+74. Design AI Rate Limiting & Throttling
+75. Design AI Background Processing System
+
+---
+
+# 🎯 HOW TO PREPARE (VERY IMPORTANT)
+
+### DSA Strategy
+
+* Solve **2 questions/day**
+* Focus on **patterns**, not memorization
+* Code in **TypeScript or JavaScript**
+
+### System Design Strategy
+
+For each question, always cover:
+
+1. Requirements
+2. APIs
+3. Database schema
+4. Scaling
+5. Caching
+6. Bottlenecks
+7. Trade-offs
+
+---
+
+# 🏆 INTERVIEW REALITY CHECK
+
+If you can:
+
+* Solve **35–40 of these DSA**
+* Confidently explain **15–18 system design**
+
+👉 You are **Senior-level ready**.
+
+---
+
+## 🚀 NEXT (Optional – Very Powerful)
+
+I can give you:
+✅ **Solutions roadmap for these DSA**
+✅ **System design answer templates**
+✅ **Mock interview questions**
+✅ **Resume bullets based on this stack**
+
+Just tell me what you want next 👌

@@ -1,0 +1,105 @@
+In **System Design**, understanding **joins** in **databases** is crucial because how you structure your data and perform joins can impact **performance, scalability**, and **availability** of your application.
+
+---
+
+## 🔗 What are Joins?
+
+In SQL databases, a **join** combines rows from two or more tables based on a related column between them (usually a foreign key).
+
+---
+
+## 🔍 Types of Joins
+
+| Join Type           | Description                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
+| **INNER JOIN**      | Returns rows when there's a match in **both** tables.                                               |
+| **LEFT JOIN**       | Returns **all rows from the left** table and matched rows from the right; fills `NULL` if no match. |
+| **RIGHT JOIN**      | Returns **all rows from the right** table and matched from the left.                                |
+| **FULL OUTER JOIN** | Returns rows when there is a match in either table.                                                 |
+| **CROSS JOIN**      | Cartesian product – every row from A combined with every row from B.                                |
+| **SELF JOIN**       | A table joined with itself.                                                                         |
+
+---
+
+## ⚙️ System Design Considerations
+
+### 1. **Join Performance**
+
+* Joins are **CPU and memory-intensive**, especially on **large tables**.
+* Indexing the joined columns is critical.
+* **Avoid joining large tables without filters** — leads to full table scans.
+
+### 2. **Denormalization**
+
+In distributed systems:
+
+* **Avoid complex joins** across services.
+* You may **duplicate data (denormalize)** for performance.
+* E.g., store user name in `orders` table instead of joining with `users`.
+
+**Why?**
+
+* Joins work well in a single-node DB.
+* In distributed DBs (like Cassandra, DynamoDB), joins are **not supported**.
+
+### 3. **Use of Materialized Views / Caching**
+
+* Precompute join results and store them.
+* Use **Redis**, **ElasticSearch**, or **cache tables** to avoid repeated heavy joins.
+
+---
+
+## 📦 Examples in System Design
+
+### Example 1: E-commerce
+
+```sql
+SELECT o.id, u.name, p.title
+FROM orders o
+JOIN users u ON o.user_id = u.id
+JOIN products p ON o.product_id = p.id
+```
+
+**Design Note:** For high-read traffic, denormalize `user_name` and `product_title` into `orders`.
+
+---
+
+### Example 2: Analytics System
+
+Suppose you want to join billions of log rows with user metadata.
+
+**Options:**
+
+* Use a big data store like **BigQuery / Snowflake**
+* OR pre-process joins offline and store summarized data in a fast query engine (e.g., **Presto**, **ClickHouse**)
+
+---
+
+## 🚫 When Not to Use Joins
+
+* In **NoSQL** or **distributed databases** like MongoDB, Cassandra, DynamoDB.
+* In **microservices**, where data is owned by different services.
+* In **real-time systems** where latency is critical.
+
+---
+
+## ✅ Alternatives to Joins in System Design
+
+| Use Case            | Alternative                               |
+| ------------------- | ----------------------------------------- |
+| Read-heavy systems  | Denormalization                           |
+| Write-heavy systems | Eventual consistency with background sync |
+| Complex joins       | Batch ETL to generate pre-joined data     |
+| Low-latency APIs    | Redis or materialized views               |
+
+---
+
+## 🧠 Summary
+
+* Joins are powerful but can hurt performance at scale.
+* In large-scale systems, **denormalization**, **caching**, and **pre-processing** are often preferred.
+* Choose your database model (RDBMS vs NoSQL) based on whether joins are needed.
+
+---
+
+Would you like a **diagram** or a **real-world case study** (like Uber, Amazon, etc.) showing how they handle joins or avoid them in their system design?

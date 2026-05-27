@@ -1,0 +1,57 @@
+Dynamic Module & Register Pattern – NestJS (Notes)
+Dynamic Module
+A dynamic module is a NestJS module created at runtime
+Used when a module needs configuration
+Returns a DynamicModule object
+
+Common use cases:
+Database configuration
+Third-party libraries
+Reusable shared modules
+
+
+Register Pattern
+
+Implemented using a static register() method
+Accepts configuration options
+Returns a DynamicModule
+Allows different configurations in different modules
+
+
+Basic Structure
+static register(options): DynamicModule {
+  return {
+    module: ModuleName,
+    providers: [],
+    exports: [],
+  };
+}
+
+Dynamic Module Structure:
+@Module({})
+export class SampleModule {
+  static register(name: string): DynamicModule {
+    return {
+      module: SampleModule,
+      providers: [
+        { provide: 'NAME', useValue: name }
+      ],
+      exports: ['NAME'],
+    };
+  }
+}
+Importing Module
+SampleModule.register('NestJS')
+Injecting Value
+constructor(@Inject('NAME') private name: string) {}
+
+
+Key Points
+register() → synchronous configuration
+Providers can be created dynamically
+Must export providers to use outside module
+Enhances reusability & flexibility
+
+
+One-Line Definition
+Dynamic modules in NestJS allow runtime configuration using the register pattern by returning a DynamicModule
