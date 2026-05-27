@@ -1,0 +1,27 @@
+https://www.passportjs.org/packages/
+https://docs.nestjs.com/recipes/passport
+
+install this packages:
+
+$ npm install --save @nestjs/passport passport passport-local
+$ npm install --save-dev @types/passport-local
+
+we need the user folder ->
+user.entity -> model
+user.module.ts -> import the service
+user.service.ts -> in this we added the user data and the get user method
+
+
+now we create the auth folder ->
+in this we create the auth folder ->
+auth.module.ts -> import the user module, passport module
+local.strategy.ts -> in this we added the logic for the validate username and password and extend proerties from the passport library 
+
+now we go to the main module and add the app module ts provider. -> local startegy
+main controller -> include the auth guard and cretae the login routes
+
+https://docs.nestjs.com/security/authentication
+
+https://docs.nestjs.com/security/authentication#jwt-token
+
+npm install --save @nestjs/jwt
